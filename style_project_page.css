@@ -1,0 +1,200 @@
+  /* ---------------- Module system ---------------- */
+
+  main {
+    width: 100%;
+  }
+
+  /* Every module (intro block, separator, full-image block, split block)
+     is a direct child of .modules. The 20px gap here is what creates the
+     20px spacing between any image and the next image/separator — so as
+     long as new modules are added as direct children of .modules, the
+     spacing rule is automatically respected. Reorder or duplicate any
+     module freely; nothing below depends on order except the intro block,
+     which should stay first. */
+  .modules {
+    display: flex;
+    flex-direction: column;
+    gap: var(--module-gap);
+    padding-top: 40px;
+    padding-bottom: 80px;
+  }
+
+  /* ---- Intro block: always first, always the same shape ----
+     Left: one or more stacked images (20px gap between them).
+     Right: project title (Grunt Grotesk) + one or more text-blocks.
+     Uses grid-template-areas so the title/stats group can be moved
+     above the images on mobile without touching the DOM order. */
+  .intro-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "images title"
+                          "images text";
+    column-gap: var(--gap);
+    row-gap: 0;
+    align-items: start;
+    padding: 0 60px;
+  }
+
+  .intro-title-group { 
+    grid-area: title; 
+    margin-bottom: 60px;
+  }
+  .intro-images { grid-area: images; }
+  .intro-text { grid-area: text; }
+
+  .intro-images {
+    display: flex;
+    flex-direction: column;
+    gap: var(--module-gap);
+  }
+
+  .intro-image {
+    width: 100%;
+    background: var(--placeholder-bg);
+    object-fit: cover;
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  .project-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 36px;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    margin: 0 0 20px;
+    color: var(--text-primary);
+  }
+
+
+  .project-stats {
+    display: contents;
+    align-items: start;
+    flex-direction: column;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--text-primary);
+  }
+
+  .project-stats p{
+    margin: 10px 0;
+  }
+
+  /* Reusable text block — used inside the intro block and inside split
+     blocks. Add as many as you like; each one stacks with 32px above it. */
+  .text-block + .text-block {
+    margin-top: 32px;
+  }
+
+  .text-heading {
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0 0 12px;
+    color: var(--text-primary);
+  }
+
+  .text-block p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0 0 16px;
+    color: var(--text-primary);
+  }
+
+  .text-block p:last-child { margin-bottom: 0; }
+
+  .separator {
+    border: none;
+    border-top: 1px solid var(--border-color);
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+  }
+
+  /* ---- Module (1): full-width responsive image ----
+     Duplicate/reorder this block wherever you like. */
+  .block-full {
+    padding: 0 60px;
+  }
+
+  .full-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    background: var(--placeholder-bg);
+    object-fit: cover;
+    display: block;
+    margin: 20px 0;
+  }
+
+  /* ---- Module (2): half-width image + text column(s) ----
+     Duplicate/reorder this block wherever you like. Add as many
+     .text-block elements inside .split-text as you need — they'll
+     always align to the top of the image next to them. */
+  .block-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: var(--gap);
+    align-items: start;
+    margin: 0 60px;
+  }
+
+  .split-image {
+    width: 100%;
+    background: var(--placeholder-bg);
+    object-fit: cover;
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  .split-text {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+  }
+
+  @media (max-width: 800px) {
+    header nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .block-split {
+      margin: 0;
+    }
+    .nav-links {
+      flex: 1;
+      min-width: 0;
+      margin-left: 60px;
+    }
+
+    .intro-block,
+    .block-split {
+      grid-template-columns: 1fr;
+      row-gap: var(--module-gap);
+      padding-left: 60px;
+      padding-right: 60px;
+    }
+    .block-full { padding-left: 60px; padding-right: 60px; }
+
+    /* Title goes above everything, images follow, then the text-blocks. */
+    .intro-block {
+      grid-template-areas: "title"
+                            "images"
+                            "text";
+      row-gap: 0;
+    }
+
+    .intro-title-group {
+      padding-bottom: 80px;
+    }
+
+    .project-title {
+      margin-bottom: 0px;
+    }
+
+    .intro-text {
+      margin-top: var(--module-gap);
+    }
+  }

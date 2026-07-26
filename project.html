@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Kyiv Tour Guide — Nastia Honcharenko</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  /* Grunt Grotesk Bold is a paid MyFonts font — once licensed, host the
+     files and uncomment/fill in this @font-face block. Falls back to a
+     bold rounded system font until then. */
+  /*
+  @font-face {
+    font-family: 'Grunt Grotesk';
+    src: url('assets/fonts/GruntGrotesk-Bold.woff2') format('woff2'),
+         url('assets/fonts/GruntGrotesk-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+  */
+
+  :root {
+    --text-primary: #1a1a1a;
+    --text-muted: #b3b3b3;
+    --border-color: #1a1a1a;
+    --placeholder-bg: #cfcfcf;
+    --bg: #ffffff;
+    --gap: 30px;
+    --module-gap: 20px;
+    --font-display: 'Grunt Grotesk', 'Arial Rounded MT Bold', Arial, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text-primary);
+    font-family: 'Arimo', Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ---------------- Header (shared with the work page) ---------------- */
+
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    background: var(--bg);
+    padding: 22px 60px 18px 30px;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  header nav {
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(220px, 310px) 1fr;
+    column-gap: var(--gap);
+    align-items: center;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .sun-icon {
+    width: 18px;
+    height: 18px;
+    display: block;
+    animation: spin 800ms linear infinite;
+  }
+
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+
+  .site-title,
+  .nav-link {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--text-primary);
+    text-decoration: none;
+  }
+
+  .site-title { cursor: default; }
+
+  .nav-link {
+    display: inline-block;
+    padding: 4px 10px;
+    margin: -4px -10px;
+    border-radius: 4px;
+    background: transparent;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+
+  .nav-link:hover {
+    background: linear-gradient(90deg, #6ec6ff 0%, #a78bfa 35%, #f472b6 70%, #fb923c 100%);
+    color: #ffffff;
+  }
+
+  /* ---------------- Module system ---------------- */
+
+  main {
+    width: 100%;
+  }
+
+  /* Every module (intro block, separator, full-image block, split block)
+     is a direct child of .modules. The 20px gap here is what creates the
+     20px spacing between any image and the next image/separator — so as
+     long as new modules are added as direct children of .modules, the
+     spacing rule is automatically respected. Reorder or duplicate any
+     module freely; nothing below depends on order except the intro block,
+     which should stay first. */
+  .modules {
+    display: flex;
+    flex-direction: column;
+    gap: var(--module-gap);
+    padding-top: 40px;
+    padding-bottom: 80px;
+  }
+
+  /* ---- Intro block: always first, always the same shape ----
+     Left: one or more stacked images (20px gap between them).
+     Right: project title (Grunt Grotesk) + one or more text-blocks.
+     Uses grid-template-areas so the title/stats group can be moved
+     above the images on mobile without touching the DOM order. */
+  .intro-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "images title"
+                          "images text";
+    column-gap: var(--gap);
+    row-gap: 0;
+    align-items: start;
+    padding: 0 30px;
+  }
+
+  .intro-title-group { grid-area: title; }
+  .intro-images { grid-area: images; }
+  .intro-text { grid-area: text; }
+
+  .intro-images {
+    display: flex;
+    flex-direction: column;
+    gap: var(--module-gap);
+  }
+
+  .intro-image {
+    width: 100%;
+    aspect-ratio: 460 / 320;
+    background: var(--placeholder-bg);
+    object-fit: cover;
+    display: block;
+  }
+
+  .project-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 36px;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    margin: 0 0 40px;
+    color: var(--text-primary);
+  }
+
+  /* Three lines of project stats under the title. Hidden by default;
+     only shown (right-aligned, above the images) on mobile — see the
+     max-width: 640px media query below. */
+  .project-stats {
+    display: none;
+  }
+
+  /* Reusable text block — used inside the intro block and inside split
+     blocks. Add as many as you like; each one stacks with 32px above it. */
+  .text-block + .text-block {
+    margin-top: 32px;
+  }
+
+  .text-heading {
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0 0 12px;
+    color: var(--text-primary);
+  }
+
+  .text-block p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0 0 16px;
+    color: var(--text-primary);
+  }
+
+  .text-block p:last-child { margin-bottom: 0; }
+
+  /* ---- Line separator: 1px, full width of the page ---- */
+  .separator {
+    border: none;
+    border-top: 1px solid var(--border-color);
+    width: 100%;
+    margin: 0;
+  }
+
+  /* ---- Module (1): full-width responsive image ----
+     Duplicate/reorder this block wherever you like. */
+  .block-full {
+    padding: 0 30px;
+  }
+
+  .full-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 965 / 560;
+    background: var(--placeholder-bg);
+    object-fit: cover;
+    display: block;
+  }
+
+  /* ---- Module (2): half-width image + text column(s) ----
+     Duplicate/reorder this block wherever you like. Add as many
+     .text-block elements inside .split-text as you need — they'll
+     always align to the top of the image next to them. */
+  .block-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: var(--gap);
+    align-items: start;
+    padding: 0 30px;
+  }
+
+  .split-image {
+    width: 100%;
+    aspect-ratio: 470 / 245;
+    background: var(--placeholder-bg);
+    object-fit: cover;
+    display: block;
+  }
+
+  .split-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media (max-width: 640px) {
+    header nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-links {
+      flex: 1;
+      min-width: 0;
+      margin-left: 20px;
+    }
+
+    .intro-block,
+    .block-split {
+      grid-template-columns: 1fr;
+      row-gap: var(--module-gap);
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    .block-full { padding-left: 20px; padding-right: 20px; }
+
+    /* Title goes above everything, images follow, then the text-blocks. */
+    .intro-block {
+      grid-template-areas: "title"
+                            "images"
+                            "text";
+      row-gap: 0;
+    }
+
+    .intro-title-group {
+      padding-bottom: 60px;
+    }
+
+    .project-title {
+      margin-bottom: 0;
+    }
+
+    .project-stats {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 10px;
+      margin-top: 15px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      color: var(--text-primary);
+    }
+
+    .intro-text {
+      margin-top: var(--module-gap);
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <span class="brand">
+      <img class="sun-icon" src="assets/sun-icon.png" alt="">
+      <span class="site-title">NASTIA HONCHARENKO</span>
+    </span>
+    <span class="nav-links">
+      <a class="nav-link" href="#">WORK</a>
+      <a class="nav-link" href="#">ARCHIVE</a>
+      <a class="nav-link" href="#">INFO</a>
+    </span>
+  </nav>
+</header>
+
+<main>
+  <div class="modules">
+
+    <!-- ==========================================================
+         INTRO BLOCK — always first, always this shape.
+         Add/remove images in .intro-images and text-blocks in
+         .intro-content as needed.
+         ========================================================== -->
+    <section class="intro-block">
+      <div class="intro-images">
+        <img class="intro-image" src="https://placehold.co/920x640/cfcfcf/cfcfcf" alt="">
+        <img class="intro-image" src="https://placehold.co/920x640/cfcfcf/cfcfcf" alt="">
+      </div>
+
+      <div class="intro-title-group">
+        <h1 class="project-title">Kyiv Tour Guide</h1>
+        <!-- Shown only on mobile (under 640px), right-aligned above the images -->
+        <div class="project-stats">
+          <span>Editorial Design</span>
+          <span>2026</span>
+          <span>InDesign, Illustrator</span>
+        </div>
+      </div>
+
+      <div class="intro-text">
+        <div class="text-block">
+          <h3 class="text-heading">The task VS my execution</h3>
+          <p>This layout design was created as an entry for SPD-U 2026 Student Competition. The task was to design a two-spread &ldquo;(NAME OF THE CITY) RULES&rdquo; magazine showcasing a hip and interesting destination. The publication is targeted for the young independent traveler, covers culture, nightlife, and where to stay.</p>
+          <p>The guide shows a bold and youthful spirit of Kyiv, Ukraine's capital. As part of a younger generation, I invite you to experience the city through my eyes and discover the places I cherish the most.</p>
+        </div>
+
+        <div class="text-block">
+          <h3 class="text-heading">The task VS my execution</h3>
+          <p>This layout design was created as an entry for SPD-U 2026 Student Competition. The task was to design a two-spread &ldquo;(NAME OF THE CITY) RULES&rdquo; magazine showcasing a hip and interesting destination. The publication is targeted for the young independent traveler, covers culture, nightlife, and where to stay.</p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="separator">
+
+    <!-- ==========================================================
+         MODULE (1) — full-width responsive image
+         ========================================================== -->
+    <section class="block-full">
+      <img class="full-image" src="https://placehold.co/1930x1120/cfcfcf/cfcfcf" alt="">
+    </section>
+
+    <hr class="separator">
+
+    <!-- ==========================================================
+         MODULE (2) — half-width image + text column(s)
+         ========================================================== -->
+    <section class="block-split">
+      <img class="split-image" src="https://placehold.co/940x490/cfcfcf/cfcfcf" alt="">
+      <div class="split-text">
+        <div class="text-block">
+          <h3 class="text-heading">The task VS my execution</h3>
+          <p>This layout design was created as an entry for SPD-U 2026 Student Competition. The task was to design a two-spread &ldquo;(NAME OF THE CITY) RULES&rdquo; magazine showcasing a hip and interesting destination. The publication is targeted for the young independent traveler, covers culture, nightlife, and where to stay.</p>
+          <p>The guide shows a bold and youthful spirit of Kyiv, Ukraine's capital. As part of a younger generation, I invite you to experience the city through my eyes and discover the places I cherish the most.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         MODULE (2) — another split block. You can stack these back
+         to back with no separator, like this example, or add an
+         <hr class="separator"> between them if you want a divider.
+         ========================================================== -->
+    <section class="block-split">
+      <img class="split-image" src="https://placehold.co/940x490/cfcfcf/cfcfcf" alt="">
+      <div class="split-text">
+        <div class="text-block">
+          <h3 class="text-heading">The task VS my execution</h3>
+          <p>This layout design was created as an entry for SPD-U 2026 Student Competition. The task was to design a two-spread &ldquo;(NAME OF THE CITY) RULES&rdquo; magazine showcasing a hip and interesting destination. The publication is targeted for the young independent traveler, covers culture, nightlife, and where to stay.</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+</body>
+</html>

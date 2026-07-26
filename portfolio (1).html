@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Nastia Honcharenko — Work</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  /* ------------------------------------------------------------------
+     Grunt Grotesk Bold is a paid font hosted on MyFonts, not Google
+     Fonts, so it can't be linked the same way. Once you've licensed it,
+     drop the font files somewhere on your server / CDN and uncomment
+     and fill in the @font-face block below. Until then, --font-display
+     falls back to a bold, rounded system font so the layout still
+     previews correctly.
+  ------------------------------------------------------------------ */
+  /*
+  @font-face {
+    font-family: 'Grunt Grotesk';
+    src: url('assets/fonts/GruntGrotesk-Bold.woff2') format('woff2'),
+         url('assets/fonts/GruntGrotesk-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+  */
+
+  :root {
+    --text-primary: #1a1a1a;
+    --text-muted: #b3b3b3;
+    --border-color: #1a1a1a;
+    --placeholder-bg: #cfcfcf;
+    --bg: #ffffff;
+    --gap: 30px;
+    --font-display: 'Grunt Grotesk', 'Arial Rounded MT Bold', Arial, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text-primary);
+    font-family: 'Arimo', Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; }
+
+  /* ---------------- Header ---------------- */
+
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    background: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px 60px 18px 30px;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  header nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .sun-icon {
+    width: 18px;
+    height: 18px;
+    display: block;
+    animation: spin 800ms linear infinite;
+  }
+
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+
+  .site-title,
+  .nav-link {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--text-primary);
+    text-decoration: none;
+  }
+
+  .site-title { cursor: default; }
+
+  .nav-link {
+    display: inline-block;
+    padding: 4px 10px;
+    margin: -4px -10px;
+    border-radius: 4px;
+    background: transparent;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+
+  .nav-link:hover {
+    background: linear-gradient(90deg, #6ec6ff 0%, #a78bfa 35%, #f472b6 70%, #fb923c 100%);
+    color: #ffffff;
+  }
+
+  /* ---------------- Highlight section ---------------- */
+
+  .highlight {
+    width: 100%;
+    padding: 48px 30px 60px;
+    display: grid;
+    grid-template-columns: minmax(220px, 310px) 1fr;
+    column-gap: var(--gap);
+    align-items: stretch;
+  }
+
+  .highlight-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .highlight-name {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 1.15;
+    color: var(--text-primary);
+  }
+
+  .contact-list {
+    list-style: none;
+    margin: 0 0 60px;
+    padding: 0;
+  }
+
+  .contact-list li + li {
+    margin-top: 14px;
+  }
+
+  .contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--text-primary);
+    text-decoration: none;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+  }
+
+  .contact-link:hover {
+    text-decoration: underline;
+  }
+
+  .contact-arrow {
+    width: 12px;
+    height: 12px;
+    flex: none;
+    fill: currentColor;
+  }
+
+  .video-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 624 / 415;
+    background: var(--placeholder-bg);
+    overflow: hidden;
+  }
+
+  .video-wrap iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+  }
+
+  .highlight-caption {
+    margin-top: 18px;
+    text-align: right;
+  }
+
+  .highlight-title {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    color: var(--text-primary);
+  }
+
+  /* ---------------- Main work grid ---------------- */
+
+  main {
+    width: 100%;
+    padding: 48px 30px 80px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: var(--gap);
+    row-gap: var(--gap);
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-image {
+    width: 100%;
+    aspect-ratio: 470 / 245;
+    background: var(--placeholder-bg);
+    display: block;
+    object-fit: cover;
+  }
+
+  .card-category {
+    margin-top: 18px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--text-muted);
+  }
+
+  .card-title {
+    margin-top: 12px;
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    color: var(--text-primary);
+  }
+
+  @media (max-width: 640px) {
+    main { padding-left: 20px; padding-right: 20px; }
+    .grid { grid-template-columns: 1fr; }
+
+    .highlight {
+      padding-left: 20px;
+      padding-right: 20px;
+      grid-template-columns: 1fr;
+      row-gap: 30px;
+    }
+    .highlight-caption { text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <span class="brand">
+      <img class="sun-icon" src="assets/sun-icon.png" alt="">
+      <span class="site-title">NASTIA HONCHARENKO</span>
+    </span>
+    <a class="nav-link" href="#">WORK</a>
+    <a class="nav-link" href="#">ARCHIVE</a>
+    <a class="nav-link" href="#">INFO</a>
+  </nav>
+</header>
+
+<section class="highlight">
+  <div class="highlight-left">
+    <h1 class="highlight-name">Nastia<br>Honcharenko</h1>
+
+    <ul class="contact-list">
+      <li>
+        <!-- replace with your actual Google Drive resume link -->
+        <a class="contact-link" href="https://drive.google.com/your-resume-link" target="_blank" rel="noopener">
+          <svg class="contact-arrow" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+            <path d="M501.16,240.31l-147.96-174.18c-8.94-10.52-24.71-11.81-35.24-2.87-10.52,8.94-11.81,24.72-2.87,35.24l113.37,133.47H29.74c-13.81,0-25,11.19-25,25s11.19,25,25,25h397.93l-112.57,132.53c-8.94,10.52-7.65,26.3,2.87,35.24,4.7,3.99,10.45,5.95,16.17,5.95,7.08,0,14.12-3,19.07-8.82l147.96-174.18c7.93-9.33,7.93-23.04,0-32.37Z"/>
+          </svg>
+          Resume
+        </a>
+      </li>
+      <li>
+        <!-- replace with your actual email address -->
+        <a class="contact-link" href="mailto:hello@nastiahoncharenko.com">
+          <svg class="contact-arrow" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+            <path d="M501.16,240.31l-147.96-174.18c-8.94-10.52-24.71-11.81-35.24-2.87-10.52,8.94-11.81,24.72-2.87,35.24l113.37,133.47H29.74c-13.81,0-25,11.19-25,25s11.19,25,25,25h397.93l-112.57,132.53c-8.94,10.52-7.65,26.3,2.87,35.24,4.7,3.99,10.45,5.95,16.17,5.95,7.08,0,14.12-3,19.07-8.82l147.96-174.18c7.93-9.33,7.93-23.04,0-32.37Z"/>
+          </svg>
+          Email
+        </a>
+      </li>
+      <li>
+        <!-- replace with your actual LinkedIn profile link -->
+        <a class="contact-link" href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener">
+          <svg class="contact-arrow" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+            <path d="M501.16,240.31l-147.96-174.18c-8.94-10.52-24.71-11.81-35.24-2.87-10.52,8.94-11.81,24.72-2.87,35.24l113.37,133.47H29.74c-13.81,0-25,11.19-25,25s11.19,25,25,25h397.93l-112.57,132.53c-8.94,10.52-7.65,26.3,2.87,35.24,4.7,3.99,10.45,5.95,16.17,5.95,7.08,0,14.12-3,19.07-8.82l147.96-174.18c7.93-9.33,7.93-23.04,0-32.37Z"/>
+          </svg>
+          linkedin
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="highlight-right">
+    <div class="video-wrap">
+      <!-- replace VIDEO_ID with your actual YouTube video id -->
+      <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Kyiv Tour Guide" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="highlight-caption">
+      <span class="highlight-title">BRAND STYLE GUIDE &bull; MUSEUM WAYFINDING</span>
+    </div>
+  </div>
+</section>
+
+<main>
+  <div class="grid">
+    <!-- Repeat this .card block for each project. Swap the src on .card-image,
+         and edit .card-category / .card-title text. -->
+    <div class="card">
+      <img class="card-image" src="https://placehold.co/940x490/cfcfcf/cfcfcf" alt="Kyiv Tour Guide">
+      <span class="card-category">Layout Design, Publication</span>
+      <span class="card-title">KYIV TOUR GUIDE</span>
+    </div>
+
+    <div class="card">
+      <img class="card-image" src="https://placehold.co/940x490/cfcfcf/cfcfcf" alt="Kyiv Tour Guide">
+      <span class="card-category">Layout Design, Publication</span>
+      <span class="card-title">KYIV TOUR GUIDE</span>
+    </div>
+
+    <div class="card">
+      <img class="card-image" src="https://placehold.co/940x490/cfcfcf/cfcfcf" alt="Kyiv Tour Guide">
+      <span class="card-category">Layout Design, Publication</span>
+      <span class="card-title">KYIV TOUR GUIDE</span>
+    </div>
+
+    <div class="card">
+      <img class="card-image" src="https://placehold.co/940x490/cfcfcf/cfcfcf" alt="Kyiv Tour Guide">
+      <span class="card-category">Layout Design, Publication</span>
+      <span class="card-title">KYIV TOUR GUIDE</span>
+    </div>
+
+    <div class="card">
+      <img class="card-image" src="https://placehold.co/940x490/cfcfcf/cfcfcf" alt="Kyiv Tour Guide">
+      <span class="card-category">Layout Design, Publication</span>
+      <span class="card-title">KYIV TOUR GUIDE</span>
+    </div>
+
+    <div class="card">
+      <img class="card-image" src="https://placehold.co/940x490/cfcfcf/cfcfcf" alt="Kyiv Tour Guide">
+      <span class="card-category">Layout Design, Publication</span>
+      <span class="card-title">KYIV TOUR GUIDE</span>
+    </div>
+  </div>
+</main>
+
+</body>
+</html>
