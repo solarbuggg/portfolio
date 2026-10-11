@@ -40,11 +40,11 @@
   opacity: 0.5;
 }
 
-.row-1::before { background-image: url("./solarbuggg_img/fine_art/bannersArtboard 1.jpg"); }
-.row-2::before { background-image: url("./solarbuggg_img/fine_art/bannersArtboard 2.jpg"); }
-.row-3::before { background-image: url("./solarbuggg_img/fine_art/bannersArtboard 3.jpg"); }
-.row-4::before { background-image: url("./solarbuggg_img/fine_art/bannersArtboard 4.jpg"); }
-.row-5::before { background-image: url("./solarbuggg_img/fine_art/bannersArtboard 5.jpg"); }
+.row-1::before { background-image: url("./solarbuggg_img/fine_art/banner-1.webp"); }
+.row-2::before { background-image: url("./solarbuggg_img/fine_art/banner-2.webp"); }
+.row-3::before { background-image: url("./solarbuggg_img/fine_art/banner-3.webp"); }
+.row-4::before { background-image: url("./solarbuggg_img/fine_art/banner-4.webp"); }
+.row-5::before { background-image: url("./solarbuggg_img/fine_art/banner-5.webp"); }
 
   /* -------------------------------- */
 
