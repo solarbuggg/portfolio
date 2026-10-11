@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="rewrite this for google search tags?" >
+    <title>Document</title>
+    <link rel="stylesheet" href="./style_solarbuggg.css">
+    <link rel="stylesheet" href="./style_PROJECT_page.css">
+    <link rel="stylesheet" href="./style_beautiful_moments_page.css">
+</head>
+<body>
+    
+
+
+<div id="navbar"></div>
+
+<script>
+    fetch ('navbar_component.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+      })
+      .catch(error => console.error('Error loading navbar fucky wucky:', error));
+</script>
+
+
+<div id="column"></div>
+
+<script>
+    fetch ('column_component.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('column').innerHTML = data;
+      })
+      .catch(error => console.error('Error loading navbar fucky wucky:', error));
+</script>
+
+
+
+   <div class="modules">
+
+    <!-- ==========================================================
+         INTRO BLOCK — always first, always this shape.
+         Add/remove images in .intro-images and text-blocks in
+         .intro-content as needed.
+         ========================================================== -->
+    <section class="intro-block">
+
+      <div class="intro-title-group">
+        <h1 class="project-title">Beautiful Moments</h1>
+        <div class="project-stats">
+          <p>Video Art, Mixed Media Collage</p>
+          <p>Baltimore MD, 2025</p>
+          <p>New media class, MICA</p>
+        </div>
+      </div>
+
+    </section>
+
+ <section class="block-full">
+      <div class="text-block">
+          <h3 class="text-heading">About</h3>
+          <p>This video is based the random fortune cookie I got for this project. It says “Your life will have a series of beautiful moments.”</p>
+          <p>Based on that I split the video into two parts. The first is my footage from my previous trips to Krakow, Poland and Kyiv, Ukraine. 
+            Then the swirl transition in the middle is followed by videos of my friends and wholesome experiences I had during my freshman year. </p>
+          <p>Both parts show a different kind of beautiful moments.</p>
+        </div>
+  </section>
+
+    <section class="block-full">
+          <video width="100%" height="100%" autoplay controls playsinline loop>
+          <source src="./solarbuggg_img/beautiful_moments/Nastia Honcharenko_fortune animation.mp4" type="video/mp4">
+          </video>
+    </section>
+
+
+    <hr class="separator">
+
+   <section class="block-full">
+      <div class="text-block">
+          <h3 class="text-heading">Chosen medium</h3>
+          <p>This is my first time working with mixed media collage. Because I immediately thought of adding moments with my friends and memories dear to me, analog editing seemed the right choice for such heartwarming subject matter. In mixed media animation each frame is undergoes physical manipulations and gets scanned back to acheive this material and texture quality.</p>
+        </div>
+
+  </section>
+    <section class="quater-split">
+      <img class="split-image" src="./solarbuggg_img/beautiful_moments/IMG_6266.JPG" alt="">
+      <img class="split-image" src="./solarbuggg_img/beautiful_moments/IMG_6272.JPG" alt="">
+      <img class="split-image" src="./solarbuggg_img/beautiful_moments/IMG_6273.JPG" alt="">
+      <img class="split-image" src="./solarbuggg_img/beautiful_moments/IMG_6268.JPG" alt="">
+    </section>
+
+
+    <hr class="separator">
+
+   <section class="block-full">
+      <div class="text-block">
+          <h3 class="text-heading">Final frames</h3>
+          <p>This work is meant to evoke feelings of nostalgia, warmth, and gentle sentimentality. 
+            The feelings you’d get from looking through an old box of photographs or revisiting videos from a time that has already passed. 
+            The physical distortions make the memories feel slightly dreamlike and imperfect, reflecting how memories themselves change over time.</p>
+          <p>I also meant to leave a trace of the feeling of belonging. Finding comfort in once unfamiliar people and places as they gradually become your new home.</p>
+        </div>
+    </section>
+
+    <section class="two-split">
+     <video width="100%" height="100%" autoplay muted playsinline loop>
+      <source src="./solarbuggg_img/beautiful_moments/beautiful-moments-segment-0.mp4" type="video/mp4">
+      </video>
+
+     <video width="100%" height="100%" autoplay muted playsinline loop>
+      <source src="./solarbuggg_img/beautiful_moments/beautiful-moments-segment-1.mp4" type="video/mp4">
+      </video>
+    </section>
+
+    <section class="two-split">
+     <video width="100%" height="100%" autoplay muted playsinline loop>
+      <source src="./solarbuggg_img/beautiful_moments/beautiful-moments-segment-2.mp4" type="video/mp4">
+      </video>
+
+     <video width="100%" height="100%" autoplay muted playsinline loop>
+      <source src="./solarbuggg_img/beautiful_moments/beautiful-moments-segment-3.mp4" type="video/mp4">
+      </video>
+    </section>
+
+    <section class="two-split">
+     <video width="100%" height="100%" autoplay muted playsinline loop>
+      <source src="./solarbuggg_img/beautiful_moments/beautiful-moments-segment-4.mp4" type="video/mp4">
+      </video>
+
+     <video width="100%" height="100%" autoplay muted playsinline loop>
+      <source src="./solarbuggg_img/beautiful_moments/beautiful-moments-segment-5.mp4" type="video/mp4">
+      </video>
+    </section>
+
+    <section class="two-split">
+     <video width="100%" height="100%" autoplay muted playsinline loop>
+      <source src="./solarbuggg_img/beautiful_moments/beautiful-moments-segment-6.mp4" type="video/mp4">
+      </video>
+
+     <video width="100%" height="100%" autoplay muted playsinline loop>
+      <source src="./solarbuggg_img/beautiful_moments/beautiful-moments-segment-7.mp4" type="video/mp4">
+      </video>
+    </section>
+
+
+</body>
+</html>

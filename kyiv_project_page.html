@@ -6,28 +6,40 @@
     <meta name="description" content="rewrite this for google search tags?" >
     <title>Document</title>
     <link rel="stylesheet" href="./style_solarbuggg.css">
-    <link rel="stylesheet" href="./style_project_page.css">
+    <link rel="stylesheet" href="./style_PROJECT_page.css">
+    <link rel="stylesheet" href="https://cdn.cursors-4u.net/cursors/animated/rgb-cursor-normal-225bee85-32.css">
+        <link rel="stylesheet" href="./style_kyiv_page.css">
 </head>
 <body>
     
 
 
-<header>
-  <nav>
-    <span class="brand">
-      <img class="sun-icon" src="solarbuggg_img/sun-icon.png" alt="">
-      <a class="nav-link" href='./index_solarbuggg.html'>NASTIA HONCHARENKO</a>
-    </span>
-     <span class="nav-links">
-      <a class="nav-link" href='./solarbuggg_work.html'>WORK</a>
-    <a class="nav-link" href='./solarbuggg_archive.html'>ARCHIVE</a>
-    <a class="nav-link" href='./solarbuggg_info.html'>INFO</a>
-    </span>
-  </nav>
-</header>
+<div id="navbar"></div>
+
+<script>
+    fetch ('navbar_component.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+      })
+      .catch(error => console.error('Error loading navbar fucky wucky:', error));
+</script>
 
 
-  <div class="modules">
+<div id="column"></div>
+
+<script>
+    fetch ('column_component.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('column').innerHTML = data;
+      })
+      .catch(error => console.error('Error loading navbar fucky wucky:', error));
+</script>
+
+
+
+   <div class="modules">
 
     <!-- ==========================================================
          INTRO BLOCK — always first, always this shape.
@@ -35,9 +47,6 @@
          .intro-content as needed.
          ========================================================== -->
     <section class="intro-block">
-      <div class="intro-images">
-        <img class="intro-image" src="./solarbuggg_img/kyiv tour guide.jpg" alt="">
-      </div>
 
       <div class="intro-title-group">
         <h1 class="project-title">Kyiv Tour Guide</h1>
@@ -50,85 +59,94 @@
 
     </section>
 
+ <section class="block-full">
+      <div class="text-block">
+          <h3 class="text-heading">About</h3>
+          <p>This guide shows a bold and youthful spirit of Kyiv, Ukraine's capital. As part of a younger generation, I invite you to experience the city through my eyes and discover the places I cherish the most.</p>
+        </div>
+  </section>
 
     <section class="block-split">
-          <img class="split-image" src="solarbuggg_img/kyiv tour guide spread2.jpg" alt="">
-      <div class="split-text">
-        <div class="text-block">
-          <h3 class="text-heading">The task VS my execution</h3>
-          <p>This layout design was created as an entry for SPD-U 2026 Student Competition. The task was to design a two-spread &ldquo;(NAME OF THE CITY) RULES&rdquo; magazine showcasing a hip and interesting destination. The publication is targeted for the young independent traveler, covers culture, nightlife, and where to stay.</p>
-          <p>The guide shows a bold and youthful spirit of Kyiv, Ukraine's capital. As part of a younger generation, I invite you to experience the city through my eyes and discover the places I cherish the most.</p>
-        </div>
+          <img class="split-image" src="solarbuggg_img/kyiv/kyiv tour guide.jpg" alt="">
+          <img class="split-image" src="solarbuggg_img/kyiv/kyiv tour guide spread2.jpg" alt="">
     </section>
+
 
     <hr class="separator">
 
-           
-    <section class="block-split">
-      <img class="split-image" src="./solarbuggg_img/scan_nhoncharenko_2026-03-26-01-12-12.PNG" alt="">
-      <div class="split-text">
-        <div class="text-block">
-          <h3 class="text-heading">Initial sketches, moodboards below</h3>
-          <p></p>
+   <section class="block-full">
+      <div class="text-block">
+          <h3 class="text-heading">The task</h3>
+          <p>This layout design was created as an entry for SPD-U 2026 Student Competition. The task was to design a two-spread “(NAME OF THE CITY) RULES” magazine showcasing a hip and interesting destination. The publication is targeted for the young independent traveler, covers culture, nightlife, and where to stay.</p>
         </div>
-      </div>
+  </section>
+  
+   <section class="block-full">
+      <div class="text-block">
+          <h3 class="text-heading">Initial sketches and moodboard</h3>
+        </div>
+  </section>
+
+    <section class="uneven-split">
+          <img class="split-image" src="solarbuggg_img/kyiv/kyiv-sketches.PNG" alt="">
+          <img class="split-image" src="solarbuggg_img/kyiv/kyiv-moodboard.jpg" alt="">
     </section>
 
 
-        <section class="block-split">
-      <img class="split-image" src="./solarbuggg_img/kyiv tour guide 3.jpg" alt="">
-      <div class="split-text">
-        <div class="text-block">
+    <hr class="separator">
+
+   <section class="block-full">
+      <div class="text-block">
           <h3 class="text-heading">The challenge</h3>
           <p>Looking at previous years’ winners, it’s noticeable that The Society of Publication Designers tends to favor more timeless designs, perhaps with a trendy twist.  Therefore, I made it my goal to base my design as much as possible on the traditional principles of hierarchy, grid systems, and composition. I brought in modern elements by using pixelated graphics, blur effects, and faux bounding boxes.</p>
         </div>
-      </div>
-    </section>
-    
-    <!-- ==========================================================
-         MODULE (1) — full-width responsive image
-         ========================================================== -->
-
-    <section class="block-full">
-      <img class="full-image" src="./solarbuggg_img/kyiv tour guide 4.jpg" alt="">
     </section>
 
+   <section class="block-full">
+      <div class="text-block">
+          <h3 class="text-heading">Color palette and graphic system</h3>
+        </div>
+    </section>
 
     <section class="block-full">
-      <img class="full-image" src="./solarbuggg_img/kyiv tour guide 5.jpg" alt="">
+      <img class="full-image" src="./solarbuggg_img/kyiv/kyiv tour guide 4.jpg" alt="">
+    </section>
+
+
+    <hr class="separator">
+
+   <section class="block-full">
       <div class="text-block">
           <h3 class="text-heading">Design iterations</h3>
           <p>The city symbol of Kyiv is a chestnut tree leaf, so in my explorations I built the composition around it. I’m weaving the past into present-day graphic design by digitalizing authentic 18th-century Ukrainian embroidery. The title is rendered as a custom Ancient Slavic typeface.</p>
         </div>
     </section>
 
+    <section class="block-full">
+      <img class="full-image" src="./solarbuggg_img/kyiv/kyiv tour guide 5.jpg" alt="">
+    </section>
 
-    <hr class="separator">
 
-    <!-- ==========================================================
-         MODULE (2) — half-width image + text column(s)
-         ========================================================== -->
-    <section class="block-split">
-      <img class="split-image" src="./solarbuggg_img/kyiv tour guide 6.jpg" alt="">
-      <div class="split-text">
-        <div class="text-block">
+      <hr class="separator">
+
+   <section class="block-full">
+      <div class="text-block">
           <h3 class="text-heading">Final result</h3>
           <p>Keeping the simple, easy-on-the-eye grid, I spiced up the design with small intricate details, the use of negative space and color accents.</p>
         </div>
-      </div>
     </section>
 
-    <!-- ==========================================================
-         MODULE (2) — another split block. You can stack these back
-         to back with no separator, like this example, or add an
-         <hr class="separator"> between them if you want a divider.
-         ========================================================== -->
-    <section class="block-split">
-      <img class="split-image" src="./solarbuggg_img/kyiv tour guide spread single.jpg" alt="">
-      <img class="split-image" src="./solarbuggg_img/kyiv tour guide spread single 2.jpg" alt="">
+    <section class="block-full">
+      <img class="full-image-20" src="./solarbuggg_img/kyiv/kyiv tour guide 6.jpg" alt="">
     </section>
 
-  </div>
+    <section class="block-full">
+      <img class="full-image-20" src="./solarbuggg_img/kyiv/kyiv tour guide.jpg" alt="">
+    </section>
+
+    <section class="block-full">
+      <img class="full-image-20" src="./solarbuggg_img/kyiv/kyiv tour guide spread2.jpg" alt="">
+    </section>
 
 </body>
 </html>

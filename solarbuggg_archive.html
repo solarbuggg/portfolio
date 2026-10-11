@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="rewrite this for google search tags?" >
+    <title>Document</title>
+    <link rel="stylesheet" href="./style_solarbuggg.css">
+    <link rel="stylesheet" href="https://cdn.cursors-4u.net/cursors/animated/rgb-cursor-normal-225bee85-32.css">
+    <link rel="stylesheet" href="./archive_style.css">
+</head>
+<body>
+    
+
+
+<div id="navbar"></div>
+
+<script>
+    fetch ('navbar_component.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+      })
+      .catch(error => console.error('Error loading navbar fucky wucky:', error));
+</script>
+
+
+<div class="bar-sections row-1">
+  <a href="./printmaking_page.html" onclick="handleClick(event)">Printmaking</a>
+</div>
+<div class="bar-sections row-2">
+  <a href="./oil_painting_page.html" onclick="handleClick(event)">Oil painting</a>
+</div>
+<div class="bar-sections row-3">
+  <a href="./more_graphic_design_page.html" onclick="handleClick(event)">More graphic design</a>
+</div>
+<div class="bar-sections row-4">
+  <a href="./photography_page.html" onclick="handleClick(event)">Photography</a>
+</div>
+<div class="bar-sections row-5">
+  <a href="./retouch_page.html" onclick="handleClick(event)">Photo retouch</a>
+</div>
+
+<div class="bartender">
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+</div>
+
+<script>
+function handleClick(e) {
+  e.preventDefault();
+  const link = e.currentTarget;
+  link.closest('.bar-sections').classList.add('is-active');   // keeps banner on
+
+  setTimeout(() => {
+  const bars = document.querySelectorAll(".bar");
+  bars.forEach((bar) => {
+    bar.style.animationPlayState = "running";
+  });
+  const lastBar = bars[bars.length - 1];
+  lastBar.addEventListener("animationend", () => {
+    setTimeout(() => {
+      window.location = link.href;
+    }, 500);
+  });
+  }, 500); 
+}
+</script>
+
+</body>
+</html>

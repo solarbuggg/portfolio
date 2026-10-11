@@ -6,105 +6,181 @@
     <meta name="description" content="rewrite this for google search tags?" >
     <title>Document</title>
     <link rel="stylesheet" href="./style_solarbuggg.css">
+    <link rel="stylesheet" href="https://cdn.cursors-4u.net/cursors/animated/rgb-cursor-normal-225bee85-32.css">
 </head>
 <body>
-    
 
 
-<header>
-  <nav>
-    <span class="brand">
-      <img class="sun-icon" src="solarbuggg_img/sun-icon.png" alt="">
-      <a class="nav-link" href='./index_solarbuggg.html'>NASTIA HONCHARENKO</a>
-    </span>
-     <span class="nav-links">
-      <a class="nav-link" href='./solarbuggg_work.html'>WORK</a>
-    <a class="nav-link" href='./solarbuggg_archive.html'>ARCHIVE</a>
-    <a class="nav-link" href='./solarbuggg_info.html'>INFO</a>
-    </span>
-  </nav>
-</header>
+<div id="navbar"></div>
+
+<script>
+    fetch ('navbar_component.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+      })
+      .catch(error => console.error('Error loading navbar fucky wucky:', error));
+</script>
+
+
+<div id="column"></div>
+
+<script>
+    fetch ('column_component.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('column').innerHTML = data;
+      })
+      .catch(error => console.error('Error loading navbar fucky wucky:', error));
+</script>
+
 
 <section class="highlight">
-  <div class="highlight-left">
+  <!-- Unused Vertical Bio, moved it to the column -->
+  <!-- <div class="highlight-left">
     <h1 class="highlight-name">Nastia<br>Honcharenko</h1>
 
     <ul class="contact-list">
       <li>
-        <!-- replace with your actual Google Drive resume link -->
         <a class="contact-link" href="https://drive.google.com/your-resume-link" target="_blank" rel="noopener">
           <img class="contact-arrow" src="solarbuggg_img/arrow-thin-right-icon 50px.svg" alt="">
           Resume
         </a>
       </li>
       <li>
-        <!-- replace with your actual email address -->
         <a class="contact-link" href="mailto:solarbuggg@gmail.com">
           <img class="contact-arrow" src="solarbuggg_img/arrow-thin-right-icon 50px.svg" alt="">
           Email
         </a>
       </li>
       <li>
-        <!-- replace with your actual LinkedIn profile link -->
         <a class="contact-link" href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener">
           <img class="contact-arrow" src="solarbuggg_img/arrow-thin-right-icon 50px.svg" alt="">
           Linkedin
         </a>
       </li>
     </ul>
-  </div>
+  </div> -->
 
   <div class="highlight-right">
-    <div>
+    <div class="block-full">
       <!-- replace VIDEO_ID with your actual YouTube video id and add class="video-wrap" to div above -->
-      <img class="highlight-right" src="./solarbuggg_img/gradients.gif" alt="">
+      <a href=./https://www.figma.com/proto/PzY6iKHDr8F8AyEnw3ADew/MAKOSH-%C2%B7-Branding-%C2%B7-Nastia-Honcharenko?node-id=1-29&p=f&viewport=25%2C257%2C0.03&t=jA6059gP7Y8P8NNG-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1>
+        <video width="100%" height="100%" autoplay muted playsinline loop>
+      <source src="./solarbuggg_img/MAKOSH-presentation.mp4" type="video/mp4">
+      </video>
+     </a>
     </div>
-    <div class="highlight-caption">
-      <span class="highlight-title">BRAND STYLE GUIDE &bull; MUSEUM WAYFINDING</span>
-    </div>
+    <a href=./https://www.figma.com/proto/PzY6iKHDr8F8AyEnw3ADew/MAKOSH-%C2%B7-Branding-%C2%B7-Nastia-Honcharenko?node-id=1-29&p=f&viewport=25%2C257%2C0.03&t=jA6059gP7Y8P8NNG-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1>
+      <div class="highlight-caption">
+      <span class="highlight-title">MAKOSH Restaurant &bull; Visual Identity Systems</span>
+      </div>
+    </a>
   </div>
+
 </section>
 
-<main>
   <div class="grid">
 
     
     <div class="card">
-      <a href='./EXP_project_page.html'> <img class="card-image" src="./solarbuggg_img/kyiv tour guide.jpg"> </a>
-      <a class="card-category" href='./EXP_project_page.html'>Motion Design, </a>
-      <a class="card-title" href='./EXP_project_page.html'>KYIV EXP</a>
+      <a href='./krakow_project_page.html'> <img class="card-image" src="./solarbuggg_img/krakow/krakow-cover-main.jpg"> </a>
+      <a class="card-category" href='./krakow_project_page.html'>Branding Identity, Typography, Layout Design</a>
+      <a class="card-title" href='./krakow_project_page.html'>Place examined. Krakow</a>
     </div>
 
     <div class="card">
-      <a href=./kyiv_project_page.html> <img class="card-image" src="./solarbuggg_img/kyiv tour guide.jpg"> </a>
+      <a href=./love_poem_project_page.html>  
+        <div class="video-wrap">
+          <video width="100%" height="100%" autoplay muted playsinline loop>
+          <source src="solarbuggg_img/my_love_poem/my-love-poem.mp4" type="video/mp4">
+          </video>
+        </div> </a>
+      <a class="card-category" href='./love_poem_project_page.html'>Motion Design, 2D Animation</a>
+      <a class="card-title" href='./love_poem_project_page.html'>My love poem to the glow effect</a>
+    </div>
+    
+    <div class="card">
+      <a href=./kyiv_project_page.html> <img class="card-image" src="./solarbuggg_img/kyiv/kyiv tour guide.jpg"> </a>
       <a class="card-category" href='./kyiv_project_page.html'>Layout Design, Publication</a>
       <a class="card-title" href='./kyiv_project_page.html'>Kyiv Tour Guide</a>
     </div>
 
     <div class="card">
-      <a href=./solarbuggg_work.html> <img class="card-image" src="./solarbuggg_img/temp_preview.png"> </a>
-      <a class="card-category" href='./solarbuggg_work.html'>Layout Design, Publication</a>
-      <a class="card-title" href='./solarbuggg_work.html'>KYIV TOUR GUIDE</a>
+      <a href=./42_ways_project_page.html> <img class="card-image" src="./solarbuggg_img/42_ways/42ways-cover.jpg"> </a>
+      <a class="card-category" href='./42_ways_project_page.html'>Typography, Layout Design</a>
+      <a class="card-title" href='./42_ways_project_page.html'>CHANGE: 42 WAYS</a>
     </div>
 
     <div class="card">
-      <a href=./home_project_page.html> <img class="card-image" src="./solarbuggg_img/home.gif"> </a>
+      <a href=./home_project_page.html>
+        <div class="video-wrap">
+         <video width="100%" height="100%" autoplay muted playsinline loop>
+         <source src="./solarbuggg_img/home/FINAL w sound.mp4" type="video/mp4">
+         </video> 
+        </div> </a>
       <a class="card-category" href='./home_project_page.html'>3D Animation, 3D Modeling, Blender</a>
       <a class="card-title" href='./home_project_page.html'>HOME SWEET HOME</a>
     </div>
 
     <div class="card">
-      <a href=./solarbuggg_work.html> <img class="card-image" src="./solarbuggg_img/temp_preview.png"> </a>
-      <a class="card-category" href='./solarbuggg_work.html'>Motion Design, </a>
-      <a class="card-title" href='./solarbuggg_work.html'>KYIV TOUR GUIDE</a>
+      <a href=./museum_wayfinding_project_page.html> <img class="card-image" src="./solarbuggg_img/museum_wayfinding/museum-cover.jpg"> </a>
+      <a class="card-category" href='./museum_wayfinding_project_page.html'>Signs & Exhibitions, Branding Identity</a>
+      <a class="card-title" href='./museum_wayfinding_project_page.html'>Port Discovery Museum Wayfinding</a>
     </div>
 
     <div class="card">
-      <a href=./love_poem_project_page.html> <img class="card-image" src="./solarbuggg_img/temp_preview.png"> </a>
-      <a class="card-category" href='./love_poem_project_page.html'>Motion Design, 2D Animation</a>
-      <a class="card-title" href='./love_poem_project_page.html'>My love poem to the glow effect</a>
+      <a href=./video_visions_project_page.html>  
+        <div class="video-wrap">
+          <video width="100%" height="100%" autoplay muted playsinline loop>
+          <source src="solarbuggg_img/video_visions/octopus-start.mp4" type="video/mp4">
+          </video>
+        </div> </a>
+      <a class="card-category" href='./video_visions_project_page.html'>Video Art, TouchDesigner</a>
+      <a class="card-title" href='./video_visions_project_page.html'>Video Visions</a>
+    </div>
+   
+    <div class="card">
+      <a href=./glow_up_project_page.html> <img class="card-image" src="./solarbuggg_img/glow_up/glow-up-cover.jpg"> </a>
+      <a class="card-category" href='./glow_up_project_page.html'>Brand Guidelines, Branding Identity</a>
+      <a class="card-title" href='./glow_up_project_page.html'>Glow up</a>
     </div>
 
+    <div class="card">
+      <a href=vision_project_page.html> <img class="card-image" src="./solarbuggg_img/vision/vision-cover.jpg"> </a>
+      <a class="card-category" href='./vision_project_page.html'>Layout Design, Publication</a>
+      <a class="card-title" href='./vision_project_page.html'>VISION MAGAZINE VOL. 1</a>
+    </div>
+
+    <div class="card">
+      <a href=./pearlial_project_page.html> <img class="card-image" src="./solarbuggg_img/pearlial/pearlial-cover.jpg"> </a>
+      <a class="card-category" href='./pearlial_project_page.html'>App Design, Branding Identity</a>
+      <a class="card-title" href='./pearlial_project_page.html'>PEARLIAL</a>
+    </div>
+
+    <div class="card">
+      <a href=./camera_connect_project_page.html> <img class="card-image" src="./solarbuggg_img/camera_connect/camera-connect-cover.jpg"> </a>
+      <a class="card-category" href='./camera_connect_project_page.html'>App Design, Branding Identity</a>
+      <a class="card-title" href='./camera_connect_project_page.html'>CAMERA CONNECT</a>
+    </div>
+
+    <div class="card">
+      <a href=./beautiful_moments_project_page.html>
+          <div class="intro-video-wrap">        
+          <video width="100%" height="100%" autoplay muted playsinline loop>
+          <source src="solarbuggg_img/beautiful_moments/beautiful-moments-segment-0.mp4" type="video/mp4">
+          </video>
+        </div> </a>
+      <a class="card-category" href='./beautiful_moments_project_page.html'>Video Art, Mixed Media Collage</a>
+      <a class="card-title" href='./beautiful_moments_project_page.html'>beautiful moments</a>
+    </div>
+  </div>
+
+    <div>
+    <p class="credit">All coding done by me! insta:
+      <a href="https://www.instagram.com/solarbuggg/">@solarbuggg</a>. Brought to you live by 
+      <a href="https://ydlm88.github.io/Kuvacult/">@Ydlm88</a>.</p>
+    </div>
 
 </body>
 </html>

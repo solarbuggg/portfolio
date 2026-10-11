@@ -1,0 +1,27 @@
+/* NY LOVE POEM PROJECT PAGE */
+
+    .modules :nth-child(7) img,
+    .modules :nth-child(9) img,
+    .modules :nth-child(10) video,
+    .modules :nth-child(13) video {
+     box-shadow: 3px 3px 20px  rgb(234, 234, 234);
+  }
+
+    .two-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: var(--small-gap);
+    align-items: start;
+    padding: 0 50px;
+    padding-top: var(--small-gap);
+  }
+
+    .modules :nth-child(7) {
+    padding-top: 0px;
+    }
+
+    .modules :nth-child(8) .text-block,
+    .modules :nth-child(12) .text-block {
+    padding-bottom: 4px;
+    padding-top: 40px;
+  }

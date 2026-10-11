@@ -1,0 +1,75 @@
+    /* GLOW UP PROJECT PAGE */
+
+    .modules :nth-child(6) img,
+    .modules :nth-child(7) img,
+    .modules :nth-child(9) img,
+    .modules :nth-child(10) img,
+    .modules :nth-child(11) img,
+    .modules :nth-child(12) img,
+    .second-column :nth-child(2),
+    .modules :nth-child(19) .first-column :nth-child(2),
+    .modules :nth-child(23) img,
+    .modules :nth-child(24) img,
+    .modules :nth-child(25) img,
+    .modules :nth-child(26) img {
+    border: 2px solid rgb(236, 236, 236);
+    box-shadow: 3px 3px 10px  rgb(220, 220, 220);
+  }
+
+    .modules :nth-child(6),
+    .modules :nth-child(9),
+    .modules :nth-child(23) {
+    margin-top: 0px;
+  }
+
+    .modules :nth-child(20) {
+    padding-top: 40px;
+    }
+
+    .modules :nth-child(9) img {
+    aspect-ratio: initial;
+    }
+
+   .modules :nth-child(8) .text-block {
+    padding-top: 80px;
+    }
+
+    .split-image {
+    object-fit: cover !important;
+    height: 100%;
+  }
+
+    .two-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: var(--small-gap);
+    align-items: start;
+    padding: 0 50px;
+    margin-top: var(--small-gap);
+  }
+
+  .first-column :nth-child(1),
+  .second-column :nth-child(1) {
+    margin-bottom: 15px;
+  }
+
+  .text-block li {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-primary);
+    width: 70%;
+    margin: 0px;
+    margin-left: 20px;
+    padding-left: 10px;
+  }
+
+  .modules :nth-child(5) .text-heading {
+  padding: 0;
+  }
+
+    .modules :nth-child(13) .text-block,
+    .modules :nth-child(16) .text-block, 
+    .modules :nth-child(18) .text-block {
+    padding-bottom: 4px;
+    padding-top: 40px;
+  }

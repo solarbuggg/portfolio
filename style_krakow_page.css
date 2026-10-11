@@ -1,0 +1,87 @@
+    /* KRAKOW PROJECT PAGE */
+    
+    .modules :nth-child(3) img,
+    .modules :nth-child(13) img, 
+    .modules :nth-child(24) img {
+     /* border: 1px solid rgb(204, 204, 204); */
+     box-shadow: 3px 3px 20px  rgb(234, 234, 234);
+  }
+
+    .modules :nth-child(2) .text-block :nth-child(3),
+    .modules :nth-child(12) .text-block :nth-child(3),
+    .modules :nth-child(12) .text-block :nth-child(4),
+    .modules :nth-child(27) .text-block :nth-child(3) {
+    padding-top: 20px;
+  }
+
+    .split-image {
+    object-fit: cover !important;
+    height: 100%;
+  }
+    
+    .uneven-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+    column-gap: var(--small-gap);
+    align-items: start;
+    padding: 0 50px;
+  }
+
+    .two-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: var(--small-gap);
+    align-items: start;
+    padding: 0 50px;
+    padding-top: var(--small-gap);
+  }
+
+  .modules :nth-child(21) {
+    padding-top: 0px;
+  }
+
+  .modules :nth-child(22) {
+    padding-top: var(--small-gap);
+    padding-bottom: 40px;
+  }
+
+  .three-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: var(--small-gap);
+    align-items: start;
+    padding: 0 50px;
+    padding-top: var(--small-gap);
+  }
+
+  .modules :nth-child(32) {
+    padding-top: 0px;
+  }
+
+  .split-text {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: var(--small-gap);
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-primary);
+    padding-bottom: 40px;
+  }
+
+  .split-text p {
+    padding: 0 20px;
+    margin: 0px;
+  }
+
+  .modules :nth-child(23) .text-block,
+  .modules :nth-child(31) .text-block  {
+    padding-bottom: 4px;
+  }
+
+
+  @media (min-width: 1440px) {
+    
+      .split-text p {
+      font-size: 16px;
+    }
+  }

@@ -1,0 +1,20 @@
+    /* VIDEO VISIONS PROJECT PAGE */
+
+   .modules :nth-child(2) .text-block :nth-child(3),
+    .modules :nth-child(9) .text-block :nth-child(3) {
+    padding-top: 20px;
+  }
+
+    .two-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: var(--small-gap);
+    align-items: start;
+    padding: 0 50px;
+    padding-top: var(--small-gap);
+  }
+
+    .two-split video{
+    aspect-ratio: 16 / 9;
+    object-fit: cover !important;
+  }

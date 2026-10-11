@@ -1,0 +1,21 @@
+  /* KYIV PROJECT PAGE */
+
+  .uneven-split {
+    display: grid;
+    grid-template-columns: 9fr 5fr;
+    column-gap: var(--small-gap);
+    align-items: start;
+  }
+
+  .modules :nth-child(6) .text-block,
+  .modules :nth-child(10) .text-block {
+    padding-bottom: 4px;
+  }
+
+   @media (max-width: 4000px) {
+
+    .uneven-split { 
+      padding-left: 50px; 
+      padding-right: 50px; 
+    }
+}

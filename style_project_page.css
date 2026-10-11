@@ -1,19 +1,17 @@
   /* ---------------- Module system ---------------- */
-
+  
   main {
-    width: 100%;
+    width: 80%;
+    align-self: flex-end;
   }
 
-  /* Every module (intro block, separator, full-image block, split block)
-     is a direct child of .modules. The 20px gap here is what creates the
-     20px spacing between any image and the next image/separator — so as
-     long as new modules are added as direct children of .modules, the
-     spacing rule is automatically respected. Reorder or duplicate any
-     module freely; nothing below depends on order except the intro block,
-     which should stay first. */
   .modules {
+    width: 100%-218px;
     display: flex;
     flex-direction: column;
+    position: relative;
+    margin-top: calc( -100vh + 60px );
+    margin-left: 218px;
     gap: var(--module-gap);
     padding-top: 40px;
     padding-bottom: 80px;
@@ -25,8 +23,6 @@
      Uses grid-template-areas so the title/stats group can be moved
      above the images on mobile without touching the DOM order. */
   .intro-block {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
     grid-template-areas: "images title"
                           "images text";
     column-gap: var(--gap);
@@ -36,8 +32,7 @@
   }
 
   .intro-title-group { 
-    grid-area: title; 
-    margin-bottom: 60px;
+    margin-bottom: 10px;
   }
   .intro-images { grid-area: images; }
   .intro-text { grid-area: text; }
@@ -54,6 +49,14 @@
     object-fit: cover;
     display: block;
     margin-bottom: 20px;
+  }
+
+   .intro-video-wrap {
+    inset: 0;
+    height: calc( 100%-4px );
+    aspect-ratio: 16 / 9;
+    border: 0;
+    display: block;
   }
 
   .project-title {
@@ -80,34 +83,38 @@
     margin: 10px 0;
   }
 
-  /* Reusable text block — used inside the intro block and inside split
-     blocks. Add as many as you like; each one stacks with 32px above it. */
-  .text-block + .text-block {
-    margin-top: 32px;
-  }
-
   .text-heading {
     font-size: 14px;
     font-weight: 700;
-    margin: 0 0 12px;
+    margin: 0 0 16px;
+    color: var(--text-primary);
+  }
+
+  .extra-heading {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 20px 0 ;
     color: var(--text-primary);
   }
 
   .text-block p {
     font-size: 14px;
     line-height: 1.6;
-    margin: 0 0 16px;
     color: var(--text-primary);
+    width: 70%;
+    margin: 0px;
   }
 
-  .text-block p:last-child { margin-bottom: 0; }
+  .text-block { 
+    padding-bottom: 40px; 
+  }
 
   .separator {
     border: none;
     border-top: 1px solid var(--border-color);
     width: 100%;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 40px;
+    margin-bottom: 40px;
 
   }
 
@@ -124,7 +131,16 @@
     background: var(--placeholder-bg);
     object-fit: cover;
     display: block;
-    margin: 20px 0;
+  }
+
+  .full-image-20 {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    background: var(--placeholder-bg);
+    object-fit: cover;
+    display: block;
+    margin-bottom: 20px;
   }
 
   /* ---- Module (2): half-width image + text column(s) ----
@@ -134,9 +150,8 @@
   .block-split {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    column-gap: var(--gap);
+    column-gap: var(--small-gap);
     align-items: start;
-    margin: 0 60px;
   }
 
   .split-image {
@@ -144,47 +159,42 @@
     background: var(--placeholder-bg);
     object-fit: cover;
     display: block;
-    margin-bottom: 20px;
   }
 
-  .split-text {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 40px;
-  }
+  /*-------------------BREAKPOINTS----------------------*/
 
-  @media (max-width: 800px) {
+
+  /*------------I mean try moving the 4000px to 
+                the default look from the adapta
+                tions, it's broken----------------------*/
+  @media (max-width: 4000px) {
     header nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
 
-    .block-split {
-      margin: 0;
+    .modules {
+      /* padding: 30px; */
     }
     .nav-links {
       flex: 1;
       min-width: 0;
-      margin-left: 60px;
     }
 
     .intro-block,
     .block-split {
-      grid-template-columns: 1fr;
       row-gap: var(--module-gap);
-      padding-left: 60px;
-      padding-right: 60px;
+      padding-left: 50px;
+      padding-right: 50px;
+      margin: 0;
     }
-    .block-full { padding-left: 60px; padding-right: 60px; }
 
-    /* Title goes above everything, images follow, then the text-blocks. */
-    .intro-block {
-      grid-template-areas: "title"
-                            "images"
-                            "text";
-      row-gap: 0;
+    .block-full { 
+      padding-left: 50px; 
+      padding-right: 50px; 
     }
+
 
     .intro-title-group {
       padding-bottom: 80px;
@@ -196,5 +206,88 @@
 
     .intro-text {
       margin-top: var(--module-gap);
+    }
+  }
+
+  /*----------------Text scale for big screens-----------------*/
+
+  @media (min-width: 1440px) {
+
+    .column-title {
+    font-size: 14px;
+    }
+
+    .column-caption :nth-child(1) {
+    font-size: 16px;
+    letter-spacing: -0.01em;
+    }
+
+    .project-stats {
+    font-size: 16px;
+    }
+    .text-heading {
+      font-size: 16px;
+    }
+
+    .text-block p {
+      font-size: 16px;
+    }
+
+    .modules {
+    width: 100%-300px;
+    margin-left: 300px;
+    align-self: flex-end;
+    }
+
+    .column {
+      width: 300px;
+    }
+    
+    .column-image video {
+    height: 330px !important;
+    }
+  }
+
+  /*-------------------TABLET----------------------*/
+
+  @media (max-width: 800px) {
+    .intro-block,
+    .block-full,
+    .block-split,
+    .uneven-split,
+    .two-split,
+    .three-split,
+    .quater-split {
+      padding-left: 30px !important;
+      padding-right: 30px !important;
+    }
+
+    .text-block p {
+      width: 100%;
+    }
+
+    .text-block li {
+      width: 95% !important;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .modules {
+      margin-left: 160px;
+      width: calc( 100% - 160px );
+    }
+  }
+
+  /*-------------------MOBILE----------------------*/
+
+  @media (max-width: 480px) {
+    .modules {
+      margin-left: 0px;
+      margin-top: 0px;
+      width: 100%;
+    }
+
+    .project-title {
+      font-size: 28px;
     }
   }

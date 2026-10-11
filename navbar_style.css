@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap');
+
+
+/* ------------------------------------------------------------------
+     Grunt Grotesk Bold is a paid font hosted on MyFonts, not Google
+     Fonts, so it can't be linked the same way. Once you've licensed it,
+     drop the font files somewhere on your server / CDN and uncomment
+     and fill in the @font-face block below. Until then, --font-display
+     falls back to a bold, rounded system font so the layout still
+     previews correctly.
+  ------------------------------------------------------------------ */
+  /*
+  @font-face {
+    font-family: 'Grunt Grotesk';
+    src: url('assets/fonts/GruntGrotesk-Bold.woff2') format('woff2'),
+         url('assets/fonts/GruntGrotesk-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+  */
+
+  :root {
+    --text-primary: #1a1a1a;
+    --text-muted: #b3b3b3;
+    --border-color: #1a1a1a;
+    --placeholder-bg: #cfcfcf;
+    --bg: #ffffff;
+    --gap: 30px;
+    --small-gap: 15px;
+    --font-display: 'Grunt Grotesk', 'Arial Rounded MT Bold', Arial, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text-primary);
+    font-family: 'Arimo', Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; }
+
+  /* ---------------- Header ---------------- */
+
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    
+    width: 100%;
+    background: var(--bg);
+    padding: 22px 60px 18px 30px;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  header nav {
+    width: 100%;
+    align-items: center;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 50px;
+  }
+
+  .brand {
+    width: 187px;
+  }
+
+/* sun amination next to name
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+    .sun-icon {
+    width: 18px;
+    height: 18px;
+    display: block;
+    animation: spin 10000ms linear infinite;
+  }
+
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  } */
+
+  .site-title,
+  .nav-link {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--text-primary);
+    text-decoration: none;
+  }
+
+  .site-title { cursor: default; }
+
+  .nav-link {
+    display: inline-block;
+    padding: 2px 5px;
+    margin: -2px -5px;
+    background: transparent;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+
+  .nav-link:hover {
+    background-image: url(./solarbuggg_img/hover\ grdient.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #ffffff;
+  }
+
+
+  /* ----- BURGER ------ From Uiverse.io by Cevorob */ 
+
+.burger {
+  position: relative;
+  z-index: 10;
+  width: 20px;
+  height: 15px;
+  background: transparent;
+  cursor: pointer;
+  display: block;
+
+  display: none;
+}
+
+.burger input {
+  display: none;
+}
+
+.burger span {
+  display: block;
+  position: absolute;
+  height: 1.5px;
+  width: 100%;
+  background: black;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: .25s ease-in-out;
+}
+
+.burger span:nth-of-type(1) {
+  top: 0px;
+  transform-origin: left center;
+}
+
+.burger span:nth-of-type(2) {
+  top: 50%;
+  transform: translateY(-50%);
+  transform-origin: left center;
+}
+
+.burger span:nth-of-type(3) {
+  top: 100%;
+  transform-origin: left center;
+  transform: translateY(-100%);
+}
+
+.burger input:checked ~ span:nth-of-type(1) {
+  transform: rotate(45deg);
+  top: 0px;
+  left: 5px;
+}
+
+.burger input:checked ~ span:nth-of-type(2) {
+  width: 0%;
+  opacity: 0;
+}
+
+.burger input:checked ~ span:nth-of-type(3) {
+  transform: rotate(-45deg);
+  top: 14px;
+  left: 5px;
+}
+
+  /* ----------- BURGER MENU ------------ */
+
+  .burger-toggle {
+    display: none;
+}
+
+  .burger-menu {
+    position: fixed;
+    z-index: 30;
+    visibility: hidden;
+    opacity: 90%;
+    display: none;
+
+    place-items: center;
+    transform: translateY(-200px);
+    left: 0vw;
+    
+    width: 100vw;
+    background: var(--bg);
+    padding: 22px 30px 18px 30px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.burger-menu a {
+  margin: 10px 0;
+}
+
+.burger-toggle:checked ~ .burger-menu {
+    visibility: visible;
+    opacity: 100%;
+    transform: translateY(0);
+    transition: all 1.5s ease;
+}
+
+/* ----- I don't like how this 
+         replays every time when 
+         refreshing any page
+
+ .burger-toggle:not(:checked) ~ .burger-menu {
+    transition: all 1.5s ease;
+} */
+
+/*-------------------BREAKPOINTS----------------------*/
+
+@media (min-width: 1440px) {
+    
+    header nav {
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(220px, 310px) 1fr;
+    }
+    
+    .nav-link {
+      font-size: 14px;
+    }
+
+    .nav-links {
+      margin-left: 10px;
+    }
+}
+
+@media (max-device-width : 906px) {
+
+  .nav-links {
+    display: none;
+  }
+
+  .burger {
+    display: contents;
+    display: block;
+  }
+
+  .burger-menu {
+    display: initial;
+  }
+}
+
+  @media (max-width: 800px) {
+
+  /* isn't working
+    .header {
+      padding: 22px 30px 18px 30px;
+    } */
+
+    .burger {
+      right: -30px;
+    }
+  }

@@ -1,0 +1,50 @@
+    /* CAMERA CONNECT PROJECT PAGE */
+    
+    .modules :nth-child(8) img,
+    .modules :nth-child(9) img,
+    .modules :nth-child(17) video,
+    .modules :nth-child(18) img {
+     /* border: 1px solid rgb(204, 204, 204); */
+     box-shadow: 3px 3px 20px  rgb(234, 234, 234);
+  }
+
+    .modules :nth-child(2) .text-block :nth-child(3) {
+    padding-top: 20px;
+  }
+
+    .modules :nth-child(9) img {
+        aspect-ratio: initial;
+    }
+
+    .split-image {
+    object-fit: cover !important;
+    height: 100%;
+  }
+
+    .two-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: var(--small-gap);
+    align-items: start;
+    padding: 0 50px;
+  }
+
+   .second-column img {
+    object-fit: contain;
+    margin-bottom: 15px;
+    border-radius: 26px;
+  }
+
+   .second-column video {
+    object-fit: contain;
+    border-radius: 26px;
+    margin-bottom: 0;
+  }
+
+    .modules :nth-child(7) .text-block,
+    .modules :nth-child(16) .text-block, 
+    .modules :nth-child(19) .text-block,
+    .modules :nth-child(22) .text-block {
+    padding-bottom: 4px;
+    padding-top: 40px;
+  }

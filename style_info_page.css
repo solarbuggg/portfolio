@@ -1,0 +1,124 @@
+    /* INFO PAGE */
+
+    .split-image {
+    object-fit: cover !important;
+    height: 100%;
+  }
+
+    .two-split {
+    display: grid;
+    grid-template-columns: 3fr 5fr;
+    column-gap: var(--gap);
+    align-items: start;
+    padding: 0 50px;
+    margin-bottom: 40px;
+  }
+
+  .text-heading {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: 0.01em;
+    margin: 0 0 20px;
+    color: var(--text-primary);
+  }
+
+  .modules :nth-child(1) p,
+  .modules :nth-child(1) .text-heading{
+    width: 90%;
+  }
+
+  .modules :nth-child(1) p {
+    padding-top: 30px;
+  }
+
+  .modules :nth-child(1) .contact-list,
+  .modules :nth-child(1) .contact-arrow {
+    margin: 0px !important;
+  }
+
+  .modules :nth-child(2) {
+    grid-template-columns: 8fr 10fr;
+    height: 85%;
+  }
+
+  .modules :nth-child(2) .split-image {
+    height: 85%;
+  }
+
+  /*--------------- TABLE -----------------*/
+
+  .table-separator {
+    border: none;
+    border-top: 1px solid var(--border-color);
+    width: 100%;
+    margin: 0px;
+  }
+
+  .table-heading {
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: 0.01em;
+    margin: 20px 50px;
+    color: var(--text-primary);
+  }
+
+  .table {
+    display: flex;
+    align-items: stretch;
+    padding-bottom: 80px;
+  }
+
+  .table p {
+    padding-top: 0 !important;
+  }
+
+  .table .text-block {
+    padding: 30px;
+  }
+
+  .left-column {
+    width: 25%;
+    border-right: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .right-column {
+    width: 75%;
+  }
+
+  .center-block {
+    width: 33%;
+    border-right: 1px solid var(--border-color);
+  }
+
+  .row {
+    display: flex;
+    align-items: stretch;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .right-block {
+    width: 67%;
+    font-size: 12px;
+  }
+
+  /*-------------------TABLET----------------------*/
+
+  @media (max-width: 800px) {
+    .left-column {
+        display: none;
+    }
+
+    .right-column {
+        width: 100%;
+    }
+
+    .two-split {
+    display: block;
+    }
+
+    .two-split img{
+    margin-bottom: 40px;
+    }
+  }

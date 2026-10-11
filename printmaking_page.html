@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="rewrite this for google search tags?" >
+    <title>Document</title>
+    <link rel="stylesheet" href="./style_solarbuggg.css">
+    <link rel="stylesheet" href="./style_fine_art.css">
+    <link rel="stylesheet" href="https://cdn.cursors-4u.net/cursors/animated/rgb-cursor-normal-225bee85-32.css">
+</head>
+<body>
+    
+
+
+<div id="navbar"></div>
+
+<script>
+    fetch ('navbar_component.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+      })
+      .catch(error => console.error('Error loading navbar fucky wucky:', error));
+</script>
+
+
+<div class="bartender">
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+</div>
+
+<script>
+const bartender = document.querySelector('.bartender');
+
+bartender.addEventListener('animationend', () => {
+  bartender.style.display = 'none';
+});
+</script>
+
+
+<div class="gallery" id="gallery">
+  <div class="zoom-wrapper"><img src="./solarbuggg_img/fine_art/2026-04-29-0005.jpg" alt="" data-full="./solarbuggg_img/fine_art/2026-04-29-0005.jpg"
+       data-caption="Postcards series|Screenprinting, 2026, 4 x 6 in"></div>
+  <div class="zoom-wrapper"><img class="scale-13" src="./solarbuggg_img/fine_art/be kind and forgiving to people.jpg" alt="" data-full="./solarbuggg_img/fine_art/be kind and forgiving to people.jpg"
+       data-caption="Be kind and forgiving...|Screenprinting, 2026, 11 x 15 in"></div>
+  <div class="zoom-wrapper"><img class="scale-13" src="./solarbuggg_img/fine_art/screenprinted-collagraph.jpg" alt="" data-full="./solarbuggg_img/fine_art/screenprinted-collagraph.jpg"
+       data-caption="Screenprinted collagraph|Screenprinting, 2026, 12 x 20 in"></div>
+
+  <div class="zoom-wrapper"><img class="scale-13" src="./solarbuggg_img/fine_art/troyescshyna-maroon-framed.JPG" alt="" data-full="./solarbuggg_img/fine_art/troyescshyna-maroon-framed.JPG"
+       data-caption="Troyescshyna (Троєщина), Maroon framed|Etching and collagraph intaglio, 2025, 18 x 24 in"></div>
+  <div class="zoom-wrapper"><img class="scale-13" src="./solarbuggg_img/fine_art/troyescshyna-red-framed.JPG" alt="" data-full="./solarbuggg_img/fine_art/troyescshyna-red-framed.JPG"
+       data-caption="Troyescshyna (Троєщина), Red framed|Etching and collagraph intaglio, 2025, 18 x 24 in"></div>
+  <div class="zoom-wrapper"><img class="scale-13" src="./solarbuggg_img/fine_art/troyescshyna.JPG" alt="" data-full="./solarbuggg_img/fine_art/troyescshyna.JPG"
+       data-caption="Troyescshyna (Троєщина)|Etching, 2025, 11 x 15 in"></div>
+  <div class="zoom-wrapper"><img src="./solarbuggg_img/fine_art/malva-blossom-blue.JPG" alt="" data-full="./solarbuggg_img/fine_art/malva-blossom-blue.JPG"
+       data-caption="Malva blossom (Цвіт мальви), blue|Etching, 2025, 7 x 7 in"></div>
+  <div class="zoom-wrapper"><img src="./solarbuggg_img/fine_art/malva-blossom-first-state.JPG" alt="" data-full="./solarbuggg_img/fine_art/malva-blossom-first-state.JPG"
+       data-caption="Malva blossom (Цвіт мальви), first state|Etching, 2025, 7 x 7 in"></div>
+<div class="zoom-wrapper">
+  <video width="100%" height="100%" autoplay muted playsinline loop
+         data-full="solarbuggg_img/fine_art/Malva-blossom-anim-loop.mp4"
+         data-caption="Malva blossom, edition varies|Etching, 2025, 7 x 7 in">
+    <source src="solarbuggg_img/fine_art/Malva-blossom-anim-loop.mp4" type="video/mp4">
+  </video>
+</div>
+  <div class="zoom-wrapper"><img class="scale-13" src="./solarbuggg_img/fine_art/one-step-away-relief.JPG" alt="" data-full="./solarbuggg_img/fine_art/one-step-away-relief.JPG"
+       data-caption="One step away from Ma's porch (Red)|Relief, 2025, 18 x 24 in"></div>
+  <div class="zoom-wrapper"><img class="scale-13" src="./solarbuggg_img/fine_art/one-step-away.JPG" alt="" data-full="./solarbuggg_img/fine_art/one-step-away.JPG"
+       data-caption="One step away from Ma's porch|Relief, 2025, 18 x 24 in"></div>
+  <div class="zoom-wrapper"><img class="scale-13" src="./solarbuggg_img/fine_art/one-step-away-coral.JPG" alt="" data-full="./solarbuggg_img/fine_art/one-step-away-coral.JPG"
+       data-caption="One step away from Ma's porch (Coral intaglio)|Intaglio, 2025, 18 x 24 in"></div>
+  <div class="zoom-wrapper"><img class="scale-18" src="./solarbuggg_img/fine_art/collagraph-intaglio.JPG" alt="" data-full="./solarbuggg_img/fine_art/collagraph-intaglio.JPG"
+       data-caption="Collagraph intaglio|Intaglio, 2025, 6 x 6 in"></div>
+  <div class="zoom-wrapper"><img class="scale-13" src="./solarbuggg_img/fine_art/one-step-away-gamsol-spill.JPG" alt="" data-full="./solarbuggg_img/fine_art/one-step-away-gamsol-spill.JPG"
+       data-caption="One step away from Ma's porch (Gamsol spill)|Relief, 2025, 18 x 24 in"></div>
+  <div class="zoom-wrapper"><img class="scale-13" src="./solarbuggg_img/fine_art/one-step-away-vibrant-intaglio.JPG" alt="" data-full="./solarbuggg_img/fine_art/one-step-away-vibrant-intaglio.JPG"
+       data-caption="One step away from Ma's porch (Vibrant intaglio)|Intaglio, 2025, 18 x 24 in"></div>
+  <div class="zoom-wrapper"><img class="scale-13" src="./solarbuggg_img/fine_art/childhood-summer-memories.JPG" alt="" data-full="./solarbuggg_img/fine_art/childhood-summer-memories.JPG"
+       data-caption="Childhood Summer Memories - Looking out My Grandmother’s Window|Relief, 2025, 12 x 20 in"></div>
+
+  <div class="zoom-wrapper"><img class="scale-13" src="./solarbuggg_img/fine_art/9x9-lino-purpur.JPG" alt="" data-full="./solarbuggg_img/fine_art/9x9-lino-purpur.JPG"
+       data-caption="Purpur lino|Relief Linocut, 2025, 9 x 9 in"></div>
+  <div class="zoom-wrapper"><img class="scale-13" src="./solarbuggg_img/fine_art/9x9-lino-three-colors.JPG" alt="" data-full="./solarbuggg_img/fine_art/9x9-lino-three-colors.JPG"
+       data-caption="Tricolor lino|Relief Linocut, 2025, 9 x 9 in"></div>
+  <div class="zoom-wrapper"><img class="scale-13" src="./solarbuggg_img/fine_art/9x9-lino-three.JPG" alt="" data-full="./solarbuggg_img/fine_art/9x9-lino-three.JPG"
+       data-caption="Tricolor lino (purpur)|Relief Linocut, 2025, 9 x 9 in"></div>
+</div>
+
+
+
+<!-- ============ LIGHTBOX OVERLAY ============ -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <line x1="4" y1="4" x2="20" y2="20"/>
+      <line x1="20" y1="4" x2="4" y2="20"/>
+    </svg>
+  </button>
+
+  <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous image">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <polyline points="15 4 7 12 15 20"/>
+    </svg>
+  </button>
+
+  <div class="lightbox-image-wrap">
+    <img id="lightboxImage" src="" alt="">
+    <video id="lightboxVideo" controls playsinline></video>
+  </div>
+
+  <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next image">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <polyline points="9 4 17 12 9 20"/>
+    </svg>
+  </button>
+
+  <p class="lightbox-caption" id="lightboxCaption">
+    <span class="lightbox-caption-title" id="lightboxCaptionTitle"></span>
+    <span class="lightbox-caption-details" id="lightboxCaptionDetails"></span>
+  </p>
+
+</div>
+
+<script>
+(function () {
+const galleryItems = Array.from(document.querySelectorAll('#gallery img, #gallery video'));
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImage = document.getElementById('lightboxImage');
+  const lightboxVideo = document.getElementById('lightboxVideo');
+  const lightboxCaption = document.getElementById('lightboxCaption');
+  const lightboxCaptionTitle = document.getElementById('lightboxCaptionTitle');
+  const lightboxCaptionDetails = document.getElementById('lightboxCaptionDetails');
+  const btnClose = document.getElementById('lightboxClose');
+  const btnPrev = document.getElementById('lightboxPrev');
+  const btnNext = document.getElementById('lightboxNext');
+
+  let currentIndex = 0;
+
+  function getFullSrc(el) {
+    return el.dataset.full || el.currentSrc || el.src;
+  }
+
+  function updateLightbox() {
+  const el = galleryItems[currentIndex]; // was galleryImgs — see note below
+  const isVideo = el.tagName === 'VIDEO';
+
+  lightboxVideo.pause();
+  lightboxVideo.currentTime = 0;
+
+  if (isVideo) {
+    lightboxVideo.src = getFullSrc(el);
+    lightboxVideo.style.display = 'block';
+    lightboxImage.style.display = 'none';
+    lightboxVideo.play();
+  } else {
+    lightboxImage.src = getFullSrc(el);
+    lightboxImage.alt = el.alt || '';
+    lightboxImage.style.display = 'block';
+    lightboxVideo.style.display = 'none';
+  }
+
+  const raw = el.dataset.caption || el.alt || '';
+  const [title, details] = raw.split('|').map(s => (s || '').trim());
+  lightboxCaptionTitle.textContent = title || '';
+  lightboxCaptionDetails.textContent = details || '';
+  }
+
+  function openLightbox(index) {
+    currentIndex = index;
+    updateLightbox();
+    lightbox.classList.add('is-open');
+    lightbox.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('is-open');
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    lightboxVideo.pause();
+    lightboxVideo.currentTime = 0;
+    lightbox.classList.remove('is-open');
+    lightbox.setAttribute('aria-hidden', 'true');
+  }
+
+  function showNext() {
+    currentIndex = (currentIndex + 1) % galleryItems.length;
+    updateLightbox();
+  }
+
+  function showPrev() {
+    currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+    updateLightbox();
+  }
+
+  // Open on thumbnail click
+  galleryItems.forEach((img, i) => {
+    img.addEventListener('click', () => openLightbox(i));
+  });
+
+  btnClose.addEventListener('click', closeLightbox);
+  btnNext.addEventListener('click', showNext);
+  btnPrev.addEventListener('click', showPrev);
+
+  // Click outside the image (on the dark backdrop) also closes it
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  // Keyboard controls: Esc to close, arrows to navigate
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('is-open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowRight') showNext();
+    if (e.key === 'ArrowLeft') showPrev();
+  });
+})();
+</script>
+
+
+</body>
+</html>

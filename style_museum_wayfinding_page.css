@@ -1,0 +1,63 @@
+    /* MUSEUM WAYFINDING PROJECT PAGE */
+    
+    .full-image {
+     box-shadow: 3px 3px 20px  rgb(234, 234, 234);
+  }
+
+    .modules :nth-child(7) .inner-column :nth-child(2),
+    .modules :nth-child(9) .inner-column :nth-child(2),
+    .modules :nth-child(11) .inner-column :nth-child(2),
+    .modules :nth-child(17) {
+    padding-top: 20px;
+  }
+
+  .modules :nth-child(8),
+  .modules :nth-child(10) {
+    padding-bottom: 80px;
+  }
+
+    .modules :nth-child(2) .text-block :nth-child(3) {
+    padding-top: 20px;
+  }
+
+    .modules :nth-child(15) .text-block  {
+    padding-bottom: 4px;
+  }
+
+    .text-block li {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-primary);
+    width: 70%;
+    margin: 0px;
+    margin-left: 20px;
+    padding-left: 10px;
+  }
+
+    .modules :nth-child(14) .text-heading {
+    padding: 0;
+  }
+
+    .split-text {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: var(--small-gap);
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-primary);
+    padding-bottom: 40px;
+  }
+
+    .split-text p {
+    padding: 0 20px;
+    margin: 0px;
+  }
+
+
+
+  @media (min-width: 1440px) {
+    
+      .split-text p {
+      font-size: 16px;
+    }
+  }

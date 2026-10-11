@@ -1,3 +1,4 @@
+      <!-- WHATEVER -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,74 +7,40 @@
     <meta name="description" content="rewrite this for google search tags?" >
     <title>Document</title>
     <link rel="stylesheet" href="./style_solarbuggg.css">
-    <link rel="stylesheet" href="./style_EXP_project_page.css">
-    <style>
-      .intro-image {
-        aspect-ratio: 4 / 3;
-      }
-    </style>
+    <link rel="stylesheet" href="./style_PROJECT_page.css">
+    <link rel="stylesheet" href="https://cdn.cursors-4u.net/cursors/animated/rgb-cursor-normal-225bee85-32.css">
+    <link rel="stylesheet" href="./style_home_page.css">
 </head>
 <body>
     
 
 
-<header>
-  <nav>
-    <span class="brand">
-       <!-- <img class="sun-icon" src="solarbuggg_img/sun-icon.png" alt=""> -->
-      <a class="nav-link" href='./index_solarbuggg.html'>NASTIA HONCHARENKO</a>
-    </span>
-     <span class="nav-links">
-      <a class="nav-link" href='./solarbuggg_work.html'>WORK</a>
-    <a class="nav-link" href='./solarbuggg_archive.html'>ARCHIVE</a>
-    <a class="nav-link" href='./solarbuggg_info.html'>INFO</a>
-    </span>
-  </nav>
-</header>
+<div id="navbar"></div>
+
+<script>
+    fetch ('navbar_component.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+      })
+      .catch(error => console.error('Error loading navbar fucky wucky:', error));
+</script>
 
 
-<div class="column">
-    
-    
-    <div>
-      <!-- replace VIDEO_ID with your actual YouTube video id and add class="video-wrap" to div above -->
-      <img class="column-image" src="./solarbuggg_img/gradients.gif" alt="">
-    </div>
-    <div class="column-caption">
-      <p class="column-title">Nastia Honcharenko</p>
-      <p class="column-title">Graphic Designer</p>
-    </div>
+<div id="column"></div>
+
+<script>
+    fetch ('column_component.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('column').innerHTML = data;
+      })
+      .catch(error => console.error('Error loading navbar fucky wucky:', error));
+</script>
 
 
-    <ul class="contact-list">
-      <li>
-        <!-- replace with your actual Google Drive resume link -->
-        <a class="contact-link" href="https://drive.google.com/your-resume-link" target="_blank" rel="noopener">
-          <img class="contact-arrow" src="solarbuggg_img/arrow-thin-right-icon 50px.svg" alt="">
-          Resume
-        </a>
-      </li>
-      <li>
-        <!-- replace with your actual email address -->
-        <a class="contact-link" href="mailto:hello@nastiahoncharenko.com">
-          <img class="contact-arrow" src="solarbuggg_img/arrow-thin-right-icon 50px.svg" alt="">
-          Email
-        </a>
-      </li>
-      <li>
-        <!-- replace with your actual LinkedIn profile link -->
-        <a class="contact-link" href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener">
-          <img class="contact-arrow" src="solarbuggg_img/arrow-thin-right-icon 50px.svg" alt="">
-          Linkedin
-        </a>
-      </li>
-    </ul>
 
-
-  </div>
-
-
-  <div class="modules">
+   <div class="modules">
 
     <!-- ==========================================================
          INTRO BLOCK — always first, always this shape.
@@ -81,9 +48,6 @@
          .intro-content as needed.
          ========================================================== -->
     <section class="intro-block">
-      <div class="intro-images">
-        <img class="intro-image" src="./solarbuggg_img/render 21.png" alt="">
-      </div>
 
       <div class="intro-title-group">
         <h1 class="project-title">Home Sweet Home</h1>
@@ -94,83 +58,157 @@
         </div>
       </div>
 
-      <div class="split-text">
-        <div class="text-block">
+    </section>
+
+ <section class="block-full">
+      <div class="text-block">
           <h3 class="text-heading">About</h3>
           <p>Home sweet home.</p>
-          <p>A 48-second environment animation made in Blender. I’m a huge fan of mid-century maximalist ineriors with jolly colors. or this project, my goal was to create a polished isometric room design. I focused on creating an appealing color palette, animating the scene, and matching to the sound design.</p>
+          <p>A 48-second environment animation made in Blender. 
+            I’m a huge fan of mid-century maximalist interiors with jolly colors. 
+            In this project, my objective was to create a polished isometric room design. 
+            I focused on creating an appealing color palette, animating the scene, and matching to the sound design.</p>
         </div>
+  </section>
 
-    </section>
-
-    <!-- ==========================================================
-      Insert youtube/vimeo full video
-    ========================================================== -->
     <section class="block-full">
-      <img class="full-image" src="./solarbuggg_img/home.gif" alt="">
+      <video width="100%" height="100%" autoplay controls playsinline loop>
+      <source src="./solarbuggg_img/home/FINAL w sound.mp4" type="video/mp4">
+      </video>
     </section>
+
+
+    <hr class="separator">
+
+   <section class="block-full">
+      <div class="text-block">
+          <h3 class="text-heading">The goal</h3>
+          <p>I had done a similar project before where I did a realistic render of an existing interior. 
+            This time I set myself a goal for myself to shift from life-like renders to smooth isometric design style.
+          </p>
+        </div>
+  </section>
+
+    <section class="block-full">
+      <img class="full-image-20" src="./solarbuggg_img/home/timeline.jpg" alt="">
+    </section>
+
 
     <hr class="separator">
 
     <section class="block-full">
       <div class="text-block">
-          <h3 class="extra-heading">How I made it happen</h3>
+          <h3 class="text-heading">How I made it happen:</h3>
         </div>
     </section>
 
-
-    <section class="block-split">
-          <img class="split-image" src="solarbuggg_img/inspo.png" alt="">
-      <div class="split-text">
-        <div class="text-block">
+   <section class="block-full">
+      <div class="text-block">
           <h3 class="text-heading">Week 1: Rough draft and collecting references</h3>
-          <p>I’m a huge fan of mid-century maximalist ineriors with jolly colors. For this project, my goal was to create a polished isometric room design. I focused on creating an appealing color palette simple stylized items.</p>
+          <p>I drew a very approximate sketch for object placement and mapped out how many and what objects I need to model.</p>
         </div>
     </section>
+
+    <section class="quater-split">
+      <img class="split-image" src="./solarbuggg_img/home/room layout.JPG" alt="">
+      <img class="split-image" src="./solarbuggg_img/home/ref-2.jpg" alt="">
+      <img class="split-image" src="./solarbuggg_img/home/ref-3.jpg" alt="">
+      <img class="split-image" src="./solarbuggg_img//home/ref-4.jpg" alt="">
+    </section>
+
+   <section class="block-full">
+      <div class="text-block">
+          <h3 class="text-heading">Week 2-3: Modeling individual items</h3>
+          <p>Next step was modeling all objects except for Miffy lamps and chess pieces. 
+            I started with objects that take up more space and them fill up the interior with misc decorations.</p>
+        </div>
+    </section>
+
+    <section class="two-split">
+          <img class="split-image" src="solarbuggg_img/home/to-add.png" alt="">
+          <img class="split-image" src="solarbuggg_img/home/mesh.png" alt="">
+    </section>
+
+    <section class="two-split">
+          <img class="split-image" src="solarbuggg_img/home/close-up-3.png" alt="">
+          <img class="split-image" src="solarbuggg_img/home/isometric-progress.png" alt="">
+    </section>
+
+   <section class="block-full">
+      <div class="text-block">
+          <h3 class="text-heading">Week 4: Light test renders</h3>
+          <p>I set up lights in the scene. 
+            All objects have one texture I planned to use for this toy-like style but with no colors yet. 
+            I manipulated lights and shadows without having color distractions.</p>
+        </div>
+    </section>
+
+    <section class="two-split">
+          <img class="split-image" src="solarbuggg_img/home/test render 2.png" alt="">
+          <img class="split-image" src="solarbuggg_img/home/test render.png" alt="">
+    </section>
+
+    <section class="two-split">
+          <img class="split-image" src="solarbuggg_img/home/screen render 2.png" alt="">
+          <img class="split-image" src="solarbuggg_img/home/screen render 3.png" alt="">
+    </section>
+
+    <section class="block-full">
+      <div class="text-block">
+          <h3 class="text-heading">Week 5: Animating the scene</h3>
+          <p>I set up lights in the scene. All objects have one texture I planned to use for this toy-like style but with no colors yet. 
+            I manipulated lights and shadows without having color distractions.</p>
+        </div>
+    </section>
+
+    <section class="two-split">
+     <video width="100%" height="100%" autoplay muted playsinline loop>
+      <source src="./solarbuggg_img/home/animated-scene-fragment-1.mp4" type="video/mp4">
+      </video>
+
+     <video width="100%" height="100%" autoplay muted playsinline loop>
+      <source src="./solarbuggg_img/home/animated-scene-fragment-2.mp4" type="video/mp4">
+      </video>
+    </section>
+
 
     <hr class="separator">
 
-    <!-- ==========================================================
-         MODULE (1) — full-width responsive image
-         ========================================================== -->
     <section class="block-full">
-      <img class="full-image" src="./solarbuggg_img/kyiv tour guide 3.jpg" alt="">
-    </section>
-
-    <section class="block-full">
-      <img class="full-image" src="./solarbuggg_img/kyiv tour guide 4.jpg" alt="">
-    </section>
-
-    <hr class="separator">
-
-    <!-- ==========================================================
-         MODULE (2) — half-width image + text column(s)
-         ========================================================== -->
-    <section class="block-split">
-      <img class="split-image" src="./solarbuggg_img/kyiv tour guide 6.jpg" alt="">
-      <div class="split-text">
-        <div class="text-block">
-          <h3 class="text-heading">Final result</h3>
-          <p>Keeping the simple, easy-on-the-eye grid, I spiced up the design with small intricate details, the use of negative space and color accents.</p>
+      <div class="text-block">
+          <h3 class="text-heading">Week 6: Final renders</h3>
+          <p>After applying color to objects, I rendered images for both a daytime and a nighttime version of the room. 
+            The final animation is rendered in night lighting.</p>
         </div>
+    </section>
+
+    <section class="block-full">
+      <img class="full-image-20" src="./solarbuggg_img/home/render 3.png" alt="">
+    </section>
+
+    <section class="three-split">
+          <img class="split-image" src="solarbuggg_img/home/0609.png" alt="">
+          <img class="split-image" src="solarbuggg_img/home/render 6.GIF" alt="">
+          <img class="split-image" src="solarbuggg_img/home/night render 15.png" alt="">
+    </section>
+
+    <section class="block-full">
+      <div class="text-block">
+          <h3 class="text-heading">Details</h3>
       </div>
     </section>
 
-    <!-- ==========================================================
-         MODULE (2) — another split block. You can stack these back
-         to back with no separator, like this example, or add an
-         <hr class="separator"> between them if you want a divider.
-         ========================================================== -->
-    <section class="block-split">
-      <img class="split-image" src="https://placehold.co/940x490/cfcfcf/cfcfcf" alt="">
-      <div class="split-text">
-        <div class="text-block">
-          <h3 class="text-heading">The task VS my execution</h3>
-          <p>This layout design was created as an entry for SPD-U 2026 Student Competition. The task was to design a two-spread &ldquo;(NAME OF THE CITY) RULES&rdquo; magazine showcasing a hip and interesting destination. The publication is targeted for the young independent traveler, covers culture, nightlife, and where to stay.</p>
-        </div>
-      </div>
+    <section class="uneven-split">
+      <img class="split-image" src="solarbuggg_img/home/render 11.png" alt="">
+      <img class="split-image" src="solarbuggg_img/home/render 12.png" alt="">
     </section>
 
+    <section class="three-split">
+      <img class="split-image" src="solarbuggg_img/home/render 6.GIF" alt="">
+      <img class="split-image" src="solarbuggg_img/home/render 21.png" alt="">
+      <img class="split-image" src="solarbuggg_img/home/render 5.GIF" alt="">
+    </section>
+  
   </div>
 
 </body>

@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap');
+
+
+/* ------------------------------------------------------------------
+     Grunt Grotesk Bold is a paid font hosted on MyFonts, not Google
+     Fonts, so it can't be linked the same way. Once you've licensed it,
+     drop the font files somewhere on your server / CDN and uncomment
+     and fill in the @font-face block below. Until then, --font-display
+     falls back to a bold, rounded system font so the layout still
+     previews correctly.
+  ------------------------------------------------------------------ */
+  /*
+  @font-face {
+    font-family: 'Grunt Grotesk';
+    src: url('assets/fonts/GruntGrotesk-Bold.woff2') format('woff2'),
+         url('assets/fonts/GruntGrotesk-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+  */
+
+  :root {
+    --text-primary: #1a1a1a;
+    --text-muted: #b3b3b3;
+    --border-color: #1a1a1a;
+    --placeholder-bg: #cfcfcf;
+    --bg: #ffffff;
+    --gap: 30px;
+    --small-gap: 15px;
+    --font-display: 'Grunt Grotesk', 'Arial Rounded MT Bold', Arial, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text-primary);
+    font-family: 'Arimo', Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; }
+  
+  
+/* ---------------- Column ---------------- */
+  
+
+  .column {
+    position: sticky;
+    display: flex;
+    flex-direction: column;
+    top: 57px;
+    z-index: 10;
+    width: 218px;
+    height: calc(100vh - 57px);
+    background: var(--bg);
+    padding: 20px 30px;
+    border-right: 1px solid var(--border-color);
+  }
+
+  .column-caption {
+    margin-top: 20px;
+  }
+
+  .column-title {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    color: var(--text-primary);
+    margin: 5px 0;
+  }
+
+  .column-caption :nth-child(1) {
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  .column-image video {
+    position: sticky;
+    inset: 0;
+    width: 100% !important;
+    height: 250px !important;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    border: 0;
+    display: block;
+  }
+
+  .contact-list {
+    list-style: none;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    padding: 0;
+  }
+
+  .contact-list li + li {
+    margin-top: 14px;
+  }
+
+  .contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--text-primary);
+    text-decoration: none;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+  }
+
+  .contact-link:hover {
+    text-decoration: underline;
+  }
+
+  .contact-arrow {
+    width: 12px;
+    height: 12px;
+    flex: none;
+    fill: currentColor;
+  }
+
+
+  @media (min-width: 1440px) {
+
+    .column-title {
+    font-size: 14px;
+    }
+
+    .column-caption :nth-child(1) {
+    font-size: 16px;
+    letter-spacing: -0.01em;
+    }
+
+    .highlight {
+    width: 100%-360px;
+    }
+
+    .column {
+      width: 300px;
+    }
+    .column-image video {
+    height: 330px !important;
+  }
+}
+
+  /*-------------------TABLET----------------------*/
+
+  @media (max-width: 600px) {
+
+    .column-title {
+    font-size: 12px;
+    letter-spacing: -0.02em;
+    }
+
+    .column-caption :nth-child(1) {
+    font-size: 14px;
+    letter-spacing: -0.01em;
+    }
+
+    .highlight {
+    width: 100%-360px;
+    }
+
+    .column {
+      width: 160px;
+    }
+    .column-image video {
+    height: 160px !important;
+    }
+
+    .contact-list {
+    margin: 40px 0px;
+    }
+
+    .contact-list li + li {
+    margin-top: 10px;
+    }
+
+    .contact-link {
+    font-size: 13px;
+    }
+  }
