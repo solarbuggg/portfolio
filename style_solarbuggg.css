@@ -379,6 +379,7 @@
       margin-left: 0px;
       width: 100%;
       gap: var(--small-gap);
+      grid-template-columns: 1fr;
     }
 
     .highlight-title,
@@ -396,10 +397,4 @@
     margin-left: 0px;
     padding: 0px 30px;
   }
-  }
-
-  @media (max-width: 320px) {
-    .grid {
-      grid-template-columns: 1fr; 
-    }
   }
