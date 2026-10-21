@@ -8,7 +8,6 @@
      falls back to a bold, rounded system font so the layout still
      previews correctly.
   ------------------------------------------------------------------ */
-  /*
   @font-face {
     font-family: 'Grunt Grotesk';
     src: url('assets/fonts/GruntGrotesk-Bold.woff2') format('woff2'),
@@ -17,7 +16,6 @@
     font-style: normal;
     font-display: swap;
   }
-  */
 
   :root {
     --text-primary: #1a1a1a;

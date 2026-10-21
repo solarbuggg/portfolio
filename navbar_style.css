@@ -9,7 +9,6 @@
      falls back to a bold, rounded system font so the layout still
      previews correctly.
   ------------------------------------------------------------------ */
-  /*
   @font-face {
     font-family: 'Grunt Grotesk';
     src: url('assets/fonts/GruntGrotesk-Bold.woff2') format('woff2'),
@@ -18,7 +17,6 @@
     font-style: normal;
     font-display: swap;
   }
-  */
 
   :root {
     --text-primary: #1a1a1a;
@@ -109,9 +107,12 @@
     margin: -2px -5px;
     background: transparent;
     transition: background 0.2s ease, color 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
   }
 
-  .nav-link:hover {
+  .nav-link:hover,
+  .nav-link:active,
+  .nav-link:focus {
     background-image: url(./solarbuggg_img/hover\ grdient.png);
     background-repeat: no-repeat;
     background-size: cover;
@@ -130,10 +131,6 @@
   cursor: pointer;
   display: block;
 
-  display: none;
-}
-
-.burger input {
   display: none;
 }
 
@@ -167,18 +164,18 @@
   transform: translateY(-100%);
 }
 
-.burger input:checked ~ span:nth-of-type(1) {
+.burger-toggle:checked ~ header .burger span:nth-of-type(1) {
   transform: rotate(45deg);
   top: 0px;
   left: 5px;
 }
 
-.burger input:checked ~ span:nth-of-type(2) {
+.burger-toggle:checked ~ header .burger span:nth-of-type(2) {
   width: 0%;
   opacity: 0;
 }
 
-.burger input:checked ~ span:nth-of-type(3) {
+.burger-toggle:checked ~ header .burger span:nth-of-type(3) {
   transform: rotate(-45deg);
   top: 14px;
   left: 5px;
@@ -192,19 +189,21 @@
 
   .burger-menu {
     position: fixed;
+    top: 0;
     z-index: 30;
     visibility: hidden;
-    opacity: 90%;
+    opacity: 0;
     display: none;
 
     place-items: center;
     transform: translateY(-200px);
     left: 0vw;
-    
+
     width: 100vw;
     background: var(--bg);
     padding: 22px 30px 18px 30px;
     border-bottom: 1px solid var(--border-color);
+    transition: all 0.3s ease;
 }
 
 .burger-menu a {
@@ -213,9 +212,8 @@
 
 .burger-toggle:checked ~ .burger-menu {
     visibility: visible;
-    opacity: 100%;
+    opacity: 1;
     transform: translateY(0);
-    transition: all 1.5s ease;
 }
 
 /* ----- I don't like how this 
