@@ -25,7 +25,7 @@
     --bg: #ffffff;
     --gap: 30px;
     --small-gap: 15px;
-    --font-display: 'Grunt Grotesk', 'Arial Rounded MT Bold', Arial, sans-serif;
+    --font-display: 'Grunt Grotesk', 'Arimo', Arial, sans-serif;
   }
 
   * { box-sizing: border-box; }
