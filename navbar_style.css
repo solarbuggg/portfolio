@@ -116,7 +116,8 @@
     background-image: url(./solarbuggg_img/hover\ grdient.png);
     background-repeat: no-repeat;
     background-size: cover;
-    color: #ffffff;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff;
   }
 
 
@@ -189,7 +190,7 @@
 
   .burger-menu {
     position: fixed;
-    top: 0;
+    top: 57px;
     z-index: 30;
     visibility: hidden;
     opacity: 0;
