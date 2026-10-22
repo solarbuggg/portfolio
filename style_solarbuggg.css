@@ -252,6 +252,7 @@
   .credit {
     width: calc(100% - 218px);    
     margin-left: 218px;
+    margin-bottom: 0px !important;
     padding: 0px 50px;
     padding-bottom: 40px;
     font-size: 14px;
