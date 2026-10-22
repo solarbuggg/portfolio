@@ -235,10 +235,6 @@
     .nav-link {
       font-size: 14px;
     }
-
-    .nav-links {
-      margin-left: 10px;
-    }
 }
 
 @media (max-device-width : 906px) {
